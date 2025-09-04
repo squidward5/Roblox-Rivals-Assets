@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Roblox Rivals Assets - Icons, RBXL files, PSDs, and more!">
+  <meta property="og:title" content="Roblox Rivals Assets" />
+  <meta property="og:description" content="Free Roblox Rivals Assets - Icons, RBXL files, PSDs, and more!" />
+  <meta property="og:image" content="thumbnail.png" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:type" content="website" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roblox Rivals Assets</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Rubik', sans-serif;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #000b28, #01184f);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-top: 100px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 3px;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 30px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      backdrop-filter: blur(2px);
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: bold;
+      background: linear-gradient(to top, #00acff, #00e4ff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      white-space: nowrap;
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      margin-left: auto;
+    }
+
+    .nav-container {
+      position: relative;
+      padding: 15px 30px;
+      border-radius: 500px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    .nav-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 500px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.15));
+      z-index: 0;
+  }
+
+    .nav-container > * {
+      position: relative;
+      z-index: 1;
+  }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      margin-left: auto;
+      flex-wrap: wrap;
+  }
+
+    nav button {
+      background: transparent;
+      border: none;
+      color: #7d7d7d;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+      transition: color 0.25s ease;
+  }
+
+    nav button::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      height: 3px;
+      width: 0%;
+      background: #fff;
+      border-radius: 2px;
+      transition: width 0.25s ease;
+  }
+
+    nav button:hover {
+      color: #bfbfbf;
+    }
+    nav button:hover::after { width: 50%; }
+
+    nav button.active-tab {
+      color: #fff;
+    }
+    nav button.active-tab::after {
+      width: 100%;
+    }
+
+    .tab {
+      display: none;
+      padding: 40px 20px;
+    }
+
+    .tab.active {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: calc(100vh - 100px);
+      animation: fadeIn 0.5s ease;
+      
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .tab h1 {
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      background: linear-gradient(to top, #00acff, #00e4ff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-top: 20px;
+    }
+
+    .tab h2 {
+      font-size: clamp(1.25rem, 4vw, 2.5rem);
+      color: #fff;
+      margin: 15px 0;
+    }
+
+    .tab p {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 10px auto;
+    }
+
+    .icons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      justify-content: center;
+    }
+
+
+    .icon-card {
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 15px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      height: 150px;
+      padding: 10px;
+      gap: 8px;
+    }
+
+    .icon-card:hover {
+      transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.12);
+      z-index: 10;
+    }
+
+    .icon-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 5px;
+    }
+
+    .icon-card p {
+      font-size: 0.85rem;
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    #popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 9999;
+    }
+
+    #popup-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .popup-box {
+      background: rgb(17, 17, 17);
+      width: 90%;
+      max-width: 400px;
+      max-height: 80vh;
+      padding: 20px;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .popup-box img {
+      max-width: 150px;
+      max-height: 150px;
+      margin: 15px 0;
+    }
+
+    .download-btn {
+      background: #00cfff;
+      border: none;
+      padding: 10px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: #0099cc;
+    }
+
+    .tab-icon {
+      width: 55px;
+      height: 55px;
+      object-fit: contain;
+      border-radius: 100px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-left: -15px;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        gap: 10px;
+        justify-content: center;
+      }
+      nav button {
+        font-size: 1rem;
+      }
+      .logo {
+        font-size: 1.3rem;
+      }
+      .tab h1 {
+        margin-top: 10px;
+      }
+    }
+
+    .discordinvite {
+      transition: 0.15s ease;
+      cursor: pointer;
+      box-shadow: 0px 0px 10px #00000091;
+      border-radius: 12px;
+    }
+
+    .discordinvite:hover {
+      transform: scale(1.05);
+    }
+
+    .discordinvite:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo-container">
+        <img src="RRA.png" alt="Site Icon" class="tab-icon">
+        <div class="logo">Roblox Rivals Assets</div>
+      </div>
+      <nav>
+        <button type="button" onclick="showTab('home', this)" class="active-tab">Home</button>
+        <button type="button" onclick="showTab('icons', this)">Icons</button>
+        <button type="button" onclick="showTab('rbxls', this)">RBXLs</button>
+        <button type="button" onclick="showTab('psds', this)">PSDs</button>
+        <button type="button" onclick="showTab('support', this)">Support</button>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="tab active">
+    <h2>Welcome to</h2>
+    <h1>Roblox Rivals Assets</h1>
+  </section>
+
+<section id="icons" class="tab">
+  <h2>Gameplay</h2>
+  <div class="icons-grid">
+    <div class="icon-card" onclick="openPopup('Icons/Play.png', 'Play')">
+      <img src="Icons/Play.png"><p>Play</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Exit.png', 'Exit')">
+      <img src="Icons/Exit.png"><p>Exit</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Leave.png', 'Leave')">
+      <img src="Icons/Leave.png"><p>Leave</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Spawn.png', 'Spawn')">
+      <img src="Icons/Spawn.png"><p>Spawn</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Shoot.png', 'Shoot')">
+      <img src="Icons/Shoot.png"><p>Shoot</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Combat.png', 'Combat')">
+      <img src="Icons/Combat.png"><p>Combat</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Punch.png', 'Punch')">
+      <img src="Icons/Punch.png"><p>Punch</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Scythe.png', 'Scythe')">
+      <img src="Icons/Scythe.png"><p>Scythe</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Hammer.png', 'Hammer')">
+      <img src="Icons/Hammer.png"><p>Hammer</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Grenade.png', 'Grenade')">
+      <img src="Icons/Grenade.png"><p>Grenade</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Weapon.png', 'Weapon')">
+      <img src="Icons/Weapon.png"><p>Weapon</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Charm.png', 'Charm')">
+      <img src="Icons/Charm.png"><p>Charm</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Wrap.png', 'Wrap')">
+      <img src="Icons/Wrap.png"><p>Wrap</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Wrap2.png', 'Wrap2')">
+      <img src="Icons/Wrap2.png"><p>Wrap2</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Shuffle.png', 'Shuffle')">
+      <img src="Icons/Shuffle.png"><p>Shuffle</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Bullet.png', 'Bullet')">
+      <img src="Icons/Bullet.png"><p>Bullet</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Loadout1.png', 'Loadout 1')">
+      <img src="Icons/Loadout1.png"><p>Loadout 1</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Loadout2.png', 'Loadout 2')">
+      <img src="Icons/Loadout2.png"><p>Loadout 2</p>
+    </div>
+  </div>
+
+  <h2>Interface</h2>
+  <div class="icons-grid">
+    <div class="icon-card" onclick="openPopup('Icons/Health.png', 'Health')">
+      <img src="Icons/Health.png"><p>Health</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Shield.png', 'Shield')">
+      <img src="Icons/Shield.png"><p>Shield</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Indicator.png', 'Indicator')">
+      <img src="Icons/Indicator.png"><p>Indicator</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Warning.png', 'Warning')">
+      <img src="Icons/Warning.png"><p>Warning</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Death.png', 'Death')">
+      <img src="Icons/Death.png"><p>Death</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Lock.png', 'Lock')">
+      <img src="Icons/Lock.png"><p>Lock</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Unlocked.png', 'Unlocked')">
+      <img src="Icons/Unlocked.png"><p>Unlocked</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Ban.png', 'Ban')">
+      <img src="Icons/Ban.png"><p>Ban</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Gift.png', 'Gift')">
+      <img src="Icons/Gift.png"><p>Gift</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/DailyTasks.png', 'DailyTasks')">
+      <img src="Icons/DailyTasks.png"><p>Daily Tasks</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Basket.png', 'Shop')">
+      <img src="Icons/Basket.png"><p>Shop</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Key.png', 'Key')">
+      <img src="Icons/Key.png"><p>Key</p>
+    </div>
+  </div>
+
+  <h2>Profile</h2>
+  <div class="icons-grid">
+    <div class="icon-card" onclick="openPopup('Icons/1v1.png', '1v1')">
+      <img src="Icons/1v1.png"><p>1v1</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Invite.png', 'Invite')">
+      <img src="Icons/Invite.png"><p>Invite</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Close.png', 'Close')">
+      <img src="Icons/Close.png"><p>Close</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/ViewProfile.png', 'ViewProfile')">
+      <img src="Icons/ViewProfile.png"><p>View Profile</p>
+    </div>
+  </div>
+
+  <h2>Rounds</h2>
+  <div class="icons-grid">
+    <div class="icon-card" onclick="openPopup('Icons/RoundWon.png', 'RoundWon')">
+      <img src="Icons/RoundWon.png"><p>RoundWon</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/RoundLost.png.png', 'RoundLost.png')">
+      <img src="Icons/RoundLost.png"><p>RoundLost.png</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/RoundDraw.png', 'RoundDraw')">
+      <img src="Icons/RoundDraw.png"><p>RoundDraw</p>
+    </div>
+  </div>
+
+  <h2>Achievements</h2>
+  <div class="icons-grid">
+    <div class="icon-card" onclick="openPopup('Icons/Trophy.png', 'Trophy')">
+      <img src="Icons/Trophy.png"><p>Trophy</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/RankedWins.png', 'RankedWins')">
+      <img src="Icons/RankedWins.png"><p>Ranked Wins</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/MVP.png', 'MVP')">
+      <img src="Icons/MVP.png"><p>MVP</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Rewards.png', 'Rewards')">
+      <img src="Icons/Rewards.png"><p>Rewards</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Favorite.png', 'Favorite')">
+      <img src="Icons/Favorite.png"><p>Favorite</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Winstreak.png', 'Winstreak')">
+      <img src="Icons/Winstreak.png"><p>Winstreak</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Level.png', 'Level')">
+      <img src="Icons/Level.png"><p>Level</p>
+    </div>
+  </div>
+
+  <h2>Menu</h2>
+  <div class="icons-grid">
+    <div class="icon-card" onclick="openPopup('Icons/Arrow.png', 'Arrow')">
+      <img src="Icons/Arrow.png"><p>Arrow</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Back.png', 'Back')">
+      <img src="Icons/Back.png"><p>Back</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Search.png', 'Search')">
+      <img src="Icons/Search.png"><p>Search</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Category.png', 'Category')">
+      <img src="Icons/Category.png"><p>Category</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Checkmark.png', 'Checkmark')">
+      <img src="Icons/Checkmark.png"><p>Checkmark</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Restart.png', 'Restart')">
+      <img src="Icons/Restart.png"><p>Restart</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Stopwatch.png', 'Stopwatch')">
+      <img src="Icons/Stopwatch.png"><p>Stopwatch</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Region.png', 'Region')">
+      <img src="Icons/Region.png"><p>Region</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Contract.png', 'Contract')">
+      <img src="Icons/Contract.png"><p>Contract</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Trash.png', 'Trash')">
+      <img src="Icons/Trash.png"><p>Trash</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Settings.png', 'Settings')">
+      <img src="Icons/Settings.png"><p>Settings</p>
+    </div>
+  </div>
+
+  <h2>Info</h2>
+  <div class="icons-grid">
+    <div class="icon-card" onclick="openPopup('Icons/Ping.png', 'Ping')">
+      <img src="Icons/Ping.png"><p>Ping</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Sound.png', 'Sound')">
+      <img src="Icons/Sound.png"><p>Sound</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Video.png', 'Video')">
+      <img src="Icons/Video.png"><p>Video</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Camera.png', 'Camera')">
+      <img src="Icons/Camera.png"><p>Camera</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Rivals.png', 'Rivals')">
+      <img src="Icons/Rivals.png"><p>Rivals</p>
+    </div>
+  </div>
+
+  <h2>Social</h2>
+  <div class="icons-grid">
+    <div class="icon-card" onclick="openPopup('Icons/Player.png', 'Player')">
+      <img src="Icons/Player.png"><p>Player</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Spectate.png', 'Spectate')">
+      <img src="Icons/Spectate.png"><p>Spectate</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Trade.png', 'Trade')">
+      <img src="Icons/Trade.png"><p>Trade</p>
+    </div>
+  </div>
+
+  <h2>Visual</h2>
+  <div class="icons-grid">
+    <div class="icon-card" onclick="openPopup('Icons/PaintSplatter.png', 'PaintSplatter')">
+      <img src="Icons/PaintSplatter.png"><p>Paint Splatter</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Terrain.png', 'Terrain')">
+      <img src="Icons/Terrain.png"><p>Terrain</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Wind.png', 'Wind')">
+      <img src="Icons/Wind.png"><p>Wind</p>
+    </div>
+  </div>
+
+  <h2>System</h2>
+  <div class="icons-grid">
+    <div class="icon-card" onclick="openPopup('Icons/Infinite.png', 'Infinite')">
+      <img src="Icons/Infinite.png"><p>Infinite</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Keybind.png', 'Keybind')">
+      <img src="Icons/Keybind.png"><p>Keybind</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Crosshair.png', 'Crosshair')">
+      <img src="Icons/Crosshair.png"><p>Crosshair</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Arcade.png', 'Arcade')">
+      <img src="Icons/Arcade.png"><p>Arcade</p>
+    </div>
+  </div>
+
+  <h2>Devices</h2>
+  <div class="icons-grid">
+    <div class="icon-card" onclick="openPopup('Icons/Computer.png', 'Computer')">
+      <img src="Icons/Computer.png"><p>Computer</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Controller.png', 'Controller')">
+      <img src="Icons/Controller.png"><p>Controller</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Phone.png', 'Phone')">
+      <img src="Icons/Phone.png"><p>Phone</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/VR.png', 'VR')">
+      <img src="Icons/VR.png"><p>VR</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('Icons/Devices.png', 'Devices')">
+      <img src="Icons/Devices.png"><p>Devices</p>
+    </div>
+  </div>
+</section>
+
+  <section id="support" class="tab">
+    <h2>Support</h2>
+    <p>Need help? Contact us on our Discord server!</p>
+    <a href="https://discord.gg/RgKWASPUGU">
+      <div class="discordinvite">
+      <img src="Discord Invite.png">
+    </div>
+    </a>
+  </section>
+
+  <div id="popup-overlay" onclick="closePopup()">
+    <div class="popup-box" onclick="event.stopPropagation()">
+        <div id="popup-label" style="font-size: 1.6rem; font-weight: bold; color: #ffffff;"></div>
+        <img id="popup-image" src="" alt="">
+        <button class="download-btn" onclick="downloadImage()">Download</button>
+    </div>
+  </div>
+
+  <section id="rbxls" class="tab">
+  <h2>Latest Files</h2>
+  <div class="icons-grid">
+    <div class="icon-card" onclick="openPopup('RBXLs/Rivals Assets (8-24-2025).rbxlx', 'Rivals Assets (8/24/2025)', 'RBXL.png')">
+      <img src="RBXL.png"><p>Rivals Assets (8/24/2025)</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('RBXLs/Rivals Assets (contains New Battleground Map).rbxlx', 'Rivals Assets & Battleground Map', 'RBXL.png')">
+      <img src="RBXL.png"><p>Rivals Assets & Battleground Map</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('RBXLs/Rivals Maps.rbxl', 'Rivals Maps', 'RBXL.png')">
+      <img src="RBXL.png"><p>Rivals Maps</p>
+    </div>
+    </div>
+    <h2>Old Files</h2>
+  <div class="icons-grid">
+    <div class="icon-card" onclick="openPopup('RBXLs/Rivals Models.rbxl', 'Rivals Models', 'RBXL.png')">
+      <img src="RBXL.png"><p>Rivals Models</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('RBXLs/Rivals Skins.rbxl', 'Rivals Skins', 'RBXL.png')">
+      <img src="RBXL.png"><p>Rivals Skins</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('RBXLs/Rivals Skins and Weapons (7-24-2025).rbxlx', 'Rivals Skins and Weapons (7/24/2025)', 'RBXL.png')">
+      <img src="RBXL.png"><p>Rivals Skins and Weapons (7/24/2025)</p>
+    </div>
+  </div>
+
+</section>
+
+<section id="psds" class="tab">
+  <h2>PSD Files</h2>
+  <div class="icons-grid">
+    <div class="icon-card" onclick="openPopup('PSDs/1v1.psd', '1v1', 'PSD.png')">
+      <img src="PSD.png"><p>1v1</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('PSDs/Daily Shop.psd', 'Daily Shop', 'PSD.png')">
+      <img src="PSD.png"><p>Daily Shop</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('PSDs/EliminatedLabel.psd', 'EliminatedLabel', 'PSD.png')">
+      <img src="PSD.png"><p>EliminatedLabel</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('PSDs/Moderation UI.psd', 'Moderation UI', 'PSD.png')">
+      <img src="PSD.png"><p>Moderation UI</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('PSDs/PurchaseLabel.psd', 'PurchaseLabel', 'PSD.png')">
+      <img src="PSD.png"><p>PurchaseLabel</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('PSDs/Rivals Icons.psd', 'Rivals Icons', 'PSD.png')">
+      <img src="PSD.png"><p>Rivals Icons</p>
+    </div>
+    <div class="icon-card" onclick="openPopup('PSDs/SettingsLabel.psd', 'SettingsLabel', 'PSD.png')">
+      <img src="PSD.png"><p>SettingsLabel</p>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  function showTab(tabId, button) {
+    document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active-tab'));
+    button.classList.add('active-tab');
+  }
+
+  function openPopup(fileSrc, altText = "Asset Preview", previewSrc = null) {
+    const overlay = document.getElementById('popup-overlay');
+    const popupImage = document.getElementById('popup-image');
+    const popupLabel = document.getElementById('popup-label');
+
+    popupImage.dataset.fileSrc = fileSrc;
+
+    if (previewSrc) {
+      popupImage.src = previewSrc;
+      popupImage.style.display = "block";
+    } else {
+      const isImage = fileSrc.match(/\.(png|jpg|jpeg|gif)$/i);
+      if (isImage) {
+        popupImage.src = fileSrc;
+        popupImage.style.display = "block";
+      } else {
+        popupImage.src = "";
+        popupImage.style.display = "none";
+      }
+    }
+
+    popupLabel.textContent = altText;
+    overlay.classList.add('active');
+  }
+
+  function closePopup() {
+    document.getElementById('popup-overlay').classList.remove('active');
+  }
+
+  function downloadImage() {
+    const fileSrc = document.getElementById('popup-image').dataset.fileSrc;
+    const label = document.getElementById('popup-label').textContent;
+
+    const link = document.createElement('a');
+    link.href = fileSrc;
+
+    const ext = fileSrc.split('.').pop();
+    link.download = (label || "asset") + "." + ext;
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+</script>
+
+</body>
+</html>

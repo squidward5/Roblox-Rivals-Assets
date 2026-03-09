@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Roblox Rivals Assets - Icons, RBXL files, PSDs, and more!">
+  <meta property="og:title" content="Roblox Rivals Assets"/>
+  <meta property="og:description" content="Free Roblox Rivals Assets - Icons, RBXL files, PSDs, and more!"/>
+  <meta property="og:image" content="RRA.png"/>
+  <meta property="og:url" content="https://squidward5.github.io/Roblox-Rivals-Assets/"/>
+  <meta property="og:type" content="website"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#00acff">
+  <title>Roblox Rivals Assets</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Rubik', sans-serif;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 3px;
+    }
+
+    body {
+      background-image: url('RRA_BG.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-top: 100px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
+
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 30px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      backdrop-filter: blur(2px);
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: bold;
+      background: linear-gradient(to top, #00acff, #00e4ff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      white-space: nowrap;
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      margin-left: auto;
+    }
+
+    .nav-container {
+      position: relative;
+      padding: 15px 30px;
+      border-radius: 500px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    .nav-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 500px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.15));
+      z-index: 0;
+    }
+
+    .nav-container > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      margin-left: auto;
+      flex-wrap: wrap;
+    } 
+
+    nav button {
+      background: transparent;
+      border: none;
+      color: #7d7d7d;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+      transition: color 0.25s ease;
+    }
+
+    nav button::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      height: 3px;
+      width: 0%;
+      background: #fff;
+      border-radius: 2px;
+      transition: width 0.25s ease;
+    }
+
+    nav button:hover {
+      color: #bfbfbf;
+    }
+
+    nav button:hover::after { width: 50%; }
+
+    nav button.active-tab {
+      color: #fff;
+    }
+
+    nav button.active-tab::after {
+      width: 100%;
+    }
+
+    .tab {
+      display: none;
+      padding: 40px 20px;
+    }
+
+    @keyframes smoothFadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .tab.active {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: calc(100vh - 100px);
+      animation: smoothFadeDown 0.35s cubic-bezier(.25,.8,.25,1);
+    }
+
+    .tab h1 {
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      background: linear-gradient(to top, #00acff, #00e4ff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-top: 20px;
+    }
+
+    .tab h2 {
+      font-size: clamp(1.25rem, 4vw, 2.5rem);
+      color: #fff;
+      margin: 15px 0;
+    }
+
+    .tab p {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 10px auto;
+    }
+
+    .icons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      justify-content: center;
+    }
+
+
+    .icon-card {
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 15px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      height: 150px;
+      padding: 10px;
+      gap: 8px;
+    }
+
+    .icon-card:hover {
+      transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.12);
+      z-index: 10;
+    }
+
+    .icon-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 5px;
+    }
+
+    .icon-card p {
+      font-size: 0.85rem;
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    #popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 9999;
+    }
+
+    #popup-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .popup-box {
+      background: rgba(19, 19, 19, 0.795);
+      width: 90%;
+      max-width: 400px;
+      max-height: 80vh;
+      padding: 20px;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .popup-box img {
+      max-width: 150px;
+      max-height: 150px;
+      margin: 15px 0;
+    }
+
+    .download-btn {
+      background: #00cfff;
+      border: none;
+      padding: 10px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: #0099cc;
+    }
+
+    .tab-icon {
+      width: 55px;
+      height: 55px;
+      object-fit: contain;
+      border-radius: 100px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-left: -15px;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        gap: 10px;
+        justify-content: center;
+      }
+      nav button {
+        font-size: 1rem;
+      }
+      .logo {
+        font-size: 1.3rem;
+      }
+      .tab h1 {
+        margin-top: 10px;
+      }
+    }
+
+    .discordinvite {
+      transition: 0.15s ease;
+      cursor: pointer;
+      border-radius: 12px;
+    }
+
+    .discordinvite:hover {
+      transform: scale(1.05);
+    }
+
+    .discordinvite:active {
+      transform: scale(0.95);
+    }
+
+    .tutorials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .tutorial-card {
+      background: rgba(255,255,255,0.07);
+      border-radius: 15px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+      overflow: hidden;
+    }
+
+    .tutorial-card:hover {
+      transform: scale(1.04);
+      background: rgba(255,255,255,0.12);
+    }
+
+    .tutorial-card img {
+      width: 100%;
+      display: block;
+    }
+
+    .tutorial-card p {
+      padding: 12px;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* mobile scaling */
+
+    @media (max-width: 768px) {
+
+      body {
+        padding-top: 85px;
+      }
+
+      header {
+        padding: 10px 15px;
+      }
+
+      .nav-container {
+        padding: 10px 15px;
+        border-radius: 25px;
+      }
+
+      nav {
+        gap: 10px;
+      }
+
+      nav button {
+        font-size: 0.9rem;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+      }
+
+      .tab {
+        padding: 30px 15px;
+      }
+
+      .tab h1 {
+        font-size: clamp(2rem, 10vw, 3rem);
+      }
+
+      .tab h2 {
+        font-size: clamp(1.1rem, 5vw, 1.6rem);
+      }
+
+      .tab p {
+        font-size: 0.95rem;
+      }
+
+      .icons-grid {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        gap: 14px;
+      }
+
+      .icon-card {
+        width: 100%;
+        height: 110px;
+        padding: 8px;
+      }
+
+      .icon-card img {
+        width: 55px;
+        height: 55px;
+      }
+
+      .icon-card p{
+        font-size: 0.75rem;
+      }
+
+      .popup-box {
+        max-width: 90%;
+        padding: 15px;
+      }
+
+      .popup-box img {
+        max-width: 120px;
+        max-height: 120px;
+      }
+
+      .video-container iframe {
+        width: 90vw;
+        height: calc(90vw * 0.5625);
+      }
+
+      .discordinvite img {
+        width: 90%;
+        max-width: 320px;
+      }
+
+    }
+
+    a {
+      color: #3ddbff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover{
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo-container">
+        <img src="RRA.png" alt="Site Icon" class="tab-icon">
+        <div class="logo">Roblox Rivals Assets</div>
+      </div>
+      <nav>
+        <button type="button" onclick="showTab('home', this)" class="active-tab">Home</button>
+        <button type="button" onclick="showTab('icons', this)">Icons</button>
+        <button type="button" onclick="showTab('rbxls', this)">RBXLs</button>
+        <button type="button" onclick="showTab('psds', this)">PSDs</button>
+        <button type="button" onclick="showTab('tutorials', this)">Tutorials</button>
+        <button type="button" onclick="showTab('support', this)">Support</button>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="tab active">
+    <h2>Welcome to</h2>
+    <h1>Roblox Rivals Assets</h1>
+
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/iVdWZm-Yz1g"
+        frameborder="0"
+        style="width: 30vw; height: 30vh; border-radius: 12px; margin-top: 30px;"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p>website created by <a href="https://github.com/squidward5" target="_blank" rel="noopener noreferrer">zay</a></p>
+  </section>
+
+<section id="icons" class="tab">
+  <div id="icons-container"></div>
+</section>
+
+<section id="rbxls" class="tab">
+  <div id="rbxl-container"></div>
+</section>
+
+<section id="psds" class="tab">
+  <div id="psd-container"></div>
+</section>
+
+<section id="support" class="tab">
+  <h2>Support</h2>
+  <p>Need help? Contact us on our Discord server!</p>
+  <a href="https://discord.gg/RgKWASPUGU">
+    <div class="discordinvite">
+      <img src="Discord Invite.png" loading="lazy">
+    </div>
+  </a>
+</section>
+
+<section id="tutorials" class="tab">
+  <div id="tutorials-container"></div>
+</section>
+
+<div id="popup-overlay" onclick="closePopup()">
+  <div class="popup-box" onclick="event.stopPropagation()">
+    <div id="popup-label" style="font-size:1.6rem;font-weight:bold;color:#ffffff;"></div>
+    <img id="popup-image" src="" alt="">
+    <button class="download-btn" onclick="downloadImage()">Download</button>
+  </div>
+</div>
+
+<script>
+  const iconsData = {
+    Gameplay: ["Play","Exit","Leave","Spawn","Shoot","Combat","Punch","Scythe","Hammer","Grenade","Weapon","Charm","Wrap","Wrap2","Shuffle","Bullet","Loadout1","Loadout2"],
+    Interface: ["Health","Shield","Indicator","Warning","Death","Lock","Unlocked","Ban","Gift","DailyTasks","Basket","Key"],
+    Profile: ["1v1","Invite","Close","ViewProfile"],
+    Rounds: ["RoundWon","RoundLost","RoundDraw"],
+    Achievements: ["Trophy","RankedWins","MVP","Rewards","Favorite","Winstreak","Level"],
+    Menu: ["Arrow","Back","Search","Category","Checkmark","Restart","Stopwatch","Region","Contract","Trash","Settings"],
+    Info: ["Ping","Sound","Video","Camera","Rivals"],
+    Social: ["Player","Spectate","Trade"],
+    Visual: ["PaintSplatter","Terrain","Wind"],
+    System: ["Infinite","Keybind","Crosshair","Arcade"],
+    Devices: ["Computer","Controller","Phone","VR","Devices"],
+    Ranks: ["Unranked","Bronze1","Bronze2","Bronze3","Silver1","Silver2","Silver3","Platinum1","Platinum2","Platinum3","Diamond1","Diamond2","Diamond3","Onyx1","Onyx2","Onyx3","Nemesis","Archnemesis"]
+  };
+
+  const rbxlData = {
+    "Latest Files": [
+      {title:"(RRA) UPDATE 18 - Our Labor of Love Update (02-14-2026)", url:"https://www.dropbox.com/scl/fi/002rpt4ndvkvymriulio1/RRA-UPDATE-18-Our-Labor-of-Love-Update-02-14-2026.rbxlx?dl=1"},
+      {title:"(RRA) Christmas Part 2 Update (includes Iceberg) (12-24-2025)", url:"https://www.dropbox.com/scl/fi/dhb8dmq05rwi7qype5jtd/RRA-Christmas-Part-2-Update-includes-Iceberg-12-24-2025-.rbxlx.rbxlx?dl=1"},
+      {title:"(RRA) Christmas Part 2 Update (includes Village) (12-24-2025)", url:"https://www.dropbox.com/scl/fi/i4tku90h7cwi2s7ruhe6r/RRA-Christmas-Part-2-Update-includes-Village-12-24-2025-.rbxlx.rbxlx?dl=1"},
+      {title:"(RRA) Christmas Season 2 (12-12-2025)", url:"https://www.dropbox.com/scl/fi/gxu3el71kg9xmriks2vxe/RRA-Christmas-Season-2-12-12-2025.rbxlx?dl=1"},
+      {title:"(RRA) Rivals Assets (Tower Gamemode)", url:"https://www.dropbox.com/scl/fi/437t83zt3i744jspe4h9t/RRA-Rivals-Assets-Tower-Gamemode.rbxlx?dl=1"},
+      {title:"(RRA) Part 2 Update (10-27-2025)", url:"https://www.dropbox.com/scl/fi/3cdmq78hg2vfnliwrlnwm/RRA-Part-2-Update-10-27-2025.rbxlx?dl=1"},
+      {title:"(RRA) Halloween Update (10-24-2025)", url:"https://www.dropbox.com/scl/fi/h4lqrl7gsdu5aujy9g7cg/RRA-Halloween-Update-10-24-2025.rbxlx?dl=1"},
+      {title:"(RRA) Rivals Assets (contains Big Onyx)", url:"https://www.dropbox.com/scl/fi/d4tnivx38hrgxtkfabqf0/RRA-Rivals-Assets-contains-Big-Onyx.rbxlx?dl=1"},
+      {title:"(RRA) Rivals Assets (contains Dimension)", url:"https://www.dropbox.com/scl/fi/qfl2ptdm6nejbn04ebar3/RRA-Rivals-Assets-contains-Dimension.rbxlx?dl=1"}
+    ],
+
+    "Old Files": [
+      {title:"(RRA) Rivals Assets 9-26-2025", url:"https://www.dropbox.com/scl/fi/ed23ha2q4vliybc2u039t/RRA-Rivals-Assets-9-26-2025.rbxlx?dl=1"},
+      {title:"(RRA) Rivals Assets (contains Station Map)", url:"https://www.dropbox.com/scl/fi/p1oq18hkp4zugczbrbxxa/RRA-Rivals-Assets-contains-Station-Map.rbxlx?dl=1"},
+      {title:"Rivals Assets (8/24/2025)", url:"https://www.dropbox.com/scl/fi/sn8ein4jnm794ghrdv30u/Rivals-Assets-8-24-2025.rbxlx?dl=1"},
+      {title:"Rivals Assets & Battleground Map", url:"https://www.dropbox.com/scl/fi/guenan9hitjukhn262ft6/Rivals-Assets-contains-New-Battleground-Map.rbxlx?dl=1"},
+      {title:"Rivals Maps", url:"RBXLs/Rivals Maps.rbxl"},
+      {title:"Rivals Models", url:"RBXLs/Rivals Models.rbxl"},
+      {title:"Rivals Skins", url:"RBXLs/Rivals Skins.rbxl"},
+      {title:"Rivals Skins and Weapons (7/24/2025)", url:"https://www.dropbox.com/scl/fi/kr35b0xf9vfvpfi48h13s/Rivals-Skins-and-Weapons-7-24-2025.rbxlx?dl=1"}
+    ]
+  };
+
+  const psdData = {
+    "Labels": [
+      "Leaderboard (Editable)",
+      "Kill Feed (Editable)",
+      "1v1",
+      "Daily Shop",
+      "EliminatedLabel",
+      "Moderation UI",
+      "PurchaseLabel",
+      "Rivals Icons",
+      "SettingsLabel"
+    ],
+
+    "Stats": [
+      "Level",
+      "Winstreak",
+      "DuelHistory",
+      "Ranks"
+    ]
+  };
+  
+  const tutorialsData = {
+    "Tutorials": [
+      {
+        title: "How to Make Roblox RIVALS Thumbnails",
+        youtube: "QE6ezmvvqhM"
+      },
+      {
+        title: "How to use the Blender MIST PASS | Easy Depth of Field & Fog",
+        youtube: "HW3fRlVLlVg"
+      },
+      {
+        title: "FIX Roblox Studio to Blender Map Textures (Easy Exporting Guide)",
+        youtube: "daxc17ab32w"
+      },
+      {
+        title: "how to separate energy pistols in blender",
+        youtube: "YOsqvYrxDBs"
+      },
+      {
+        title: "How to apply wraps on guns for rivals gfx",
+        youtube: "VkMINqvy46Q"
+      },
+      {
+        title: "How To Make VIRAL Roblox Thumbnails.. | (Complete Roblox Thumbnail Tutorial)",
+        youtube: "lmxen_1gaUw"
+      },
+      {
+        title: "Key Weapon Texture Fix",
+        youtube: "aYpmnjILSJU"
+      }
+    ]
+  };
+    
+
+  let iconsLoaded = false;
+  let rbxlLoaded = false;
+  let psdLoaded = false;
+  let tutorialsLoaded = false;
+
+  function showTab(tabId, button) {
+    document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+
+    document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active-tab'));
+    button.classList.add('active-tab');
+
+    if (tabId === "icons" && !iconsLoaded) {
+      generateIcons();
+      iconsLoaded = true;
+    }
+
+    if (tabId === "rbxls" && !rbxlLoaded) {
+      generateRBXL();
+      rbxlLoaded = true;
+    }
+
+    if (tabId === "psds" && !psdLoaded) {
+      generatePSDs();
+      psdLoaded = true;
+    }
+
+    if (tabId === "tutorials" && !tutorialsLoaded) {
+      generateTutorials();
+      tutorialsLoaded = true;
+    }
+  }
+
+  function generateIcons() {
+    const container = document.getElementById("icons-container");
+    container.innerHTML = "";
+
+    Object.keys(iconsData).forEach(category => {
+      const title = document.createElement("h2");
+      title.textContent = category;
+      container.appendChild(title);
+
+      const grid = document.createElement("div");
+      grid.className = "icons-grid";
+
+      iconsData[category].forEach(iconName => {
+        const card = document.createElement("div");
+        card.className = "icon-card";
+        card.onclick = () => openPopup(`Icons/${iconName}.png`, formatLabel(iconName));
+
+        card.innerHTML = `
+          <img src="Icons/${iconName}.png" loading="lazy">
+          <p>${formatLabel(iconName)}</p>
+        `;
+
+        grid.appendChild(card);
+      });
+
+      container.appendChild(grid);
+    });
+  }
+
+  function generateRBXL() {
+  const container = document.getElementById("rbxl-container");
+  container.innerHTML = "";
+
+  Object.keys(rbxlData).forEach(section => {
+    const title = document.createElement("h2");
+    title.textContent = section;
+    container.appendChild(title);
+
+    const grid = document.createElement("div");
+    grid.className = "icons-grid";
+
+    rbxlData[section].forEach(file => {
+      const card = document.createElement("div");
+      card.className = "icon-card";
+      card.onclick = () => openPopup(file.url, file.title, "RBXL.png");
+
+      card.innerHTML = `
+        <img src="RBXL.png" loading="lazy">
+        <p>${file.title}</p>
+      `;
+
+      grid.appendChild(card);
+    });
+
+    container.appendChild(grid);
+  });
+}
+
+  function generatePSDs() {
+  const container = document.getElementById("psd-container");
+  container.innerHTML = "";
+
+  Object.keys(psdData).forEach(section => {
+    const title = document.createElement("h2");
+    title.textContent = section;
+    container.appendChild(title);
+
+    const grid = document.createElement("div");
+    grid.className = "icons-grid";
+
+    psdData[section].forEach(name => {
+      const card = document.createElement("div");
+      card.className = "icon-card";
+      card.onclick = () => openPopup(`PSDs/${name}.psd`, name, "PSD.png");
+
+      card.innerHTML = `
+        <img src="PSD.png" loading="lazy">
+        <p>${name.replace(" (Editable)", "")}</p>
+      `;
+
+      grid.appendChild(card);
+    });
+
+    container.appendChild(grid);
+  });
+}
+
+  function formatLabel(name) {
+    return name
+      .replace(/([a-z])([A-Z])/g, '$1 $2')
+      .trim();
+  }
+  function openPopup(fileSrc, altText = "Asset Preview", previewSrc = null) {
+    const overlay = document.getElementById('popup-overlay');
+    const popupImage = document.getElementById('popup-image');
+    const popupLabel = document.getElementById('popup-label');
+
+    popupImage.onerror = () => {
+      popupImage.style.display = "none";
+    };
+
+    popupImage.dataset.fileSrc = fileSrc;
+    popupLabel.textContent = altText;
+
+    if (previewSrc) {
+      popupImage.src = previewSrc;
+      popupImage.style.display = "block";
+    } else {
+      popupImage.src = fileSrc;
+      popupImage.style.display = "block";
+    }
+
+    overlay.classList.add('active');
+  }
+
+  function closePopup() {
+    document.getElementById('popup-overlay').classList.remove('active');
+  }
+
+  function downloadImage() {
+    const fileSrc = document.getElementById('popup-image').dataset.fileSrc;
+    const label = document.getElementById('popup-label').textContent;
+
+    const link = document.createElement('a');
+    link.href = fileSrc;
+
+    const ext = fileSrc.split('.').pop();
+    link.download = (label || "asset") + "." + ext;
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closePopup();
+  });
+
+  function generateTutorials() {
+    const container = document.getElementById("tutorials-container");
+    container.innerHTML = "";
+
+    Object.keys(tutorialsData).forEach(section => {
+
+      const title = document.createElement("h2");
+      title.textContent = section;
+      container.appendChild(title);
+
+      const grid = document.createElement("div");
+      grid.className = "tutorials-grid";
+
+      tutorialsData[section].forEach(video => {
+
+        const card = document.createElement("div");
+        card.className = "tutorial-card";
+
+        const thumbnail = `https://img.youtube.com/vi/${video.youtube}/hqdefault.jpg`;
+
+        card.innerHTML = `
+          <img src="${thumbnail}" loading="lazy">
+          <p>${video.title}</p>
+        `;
+
+        card.onclick = () => {
+          window.open(`https://youtube.com/watch?v=${video.youtube}`, "_blank");
+        };
+
+        grid.appendChild(card);
+      });
+
+      container.appendChild(grid);
+    });
+  }
+</script>
+</body>
+</html>

@@ -5,7 +5,7 @@
   <meta name="description" content="Free Roblox Rivals Assets - Icons, RBXL files, PSDs, and more!">
   <meta property="og:title" content="Roblox Rivals Assets"/>
   <meta property="og:description" content="Free Roblox Rivals Assets - Icons, RBXL files, PSDs, and more!"/>
-  <meta property="og:image" content="RRA.png"/>
+  <meta property="og:image" content="/RRA.png"/>
   <meta property="og:url" content="https://squidward5.github.io/Roblox-Rivals-Assets/"/>
   <meta property="og:type" content="website"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -29,6 +29,73 @@
     ::-webkit-scrollbar-thumb {
       background: rgba(255, 255, 255, 0.2);
       border-radius: 3px;
+    }
+
+    .search-bar {
+      position: sticky;
+      top: 125px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .search-bar .nav-container {
+      max-width: 1200px;
+    }
+
+    .search-wrapper {
+      width: 55px;
+      height: 55px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+      position: relative;
+    }
+
+    .search-wrapper:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .search-wrapper:focus-within {
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.15);
+    }
+
+    .search-wrapper.expanded {
+      width: min(500px, 90vw);
+      cursor: text;
+    }
+
+    .search-icon {
+      width: 22px;
+      height: 22px;
+      margin-left: 16px;
+      pointer-events: none;
+    }
+
+    #icon-search {
+      border: none;
+      outline: none;
+      background: transparent;
+      color: white;
+      font-size: 1rem;
+      margin-left: 14px;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .search-wrapper.expanded #icon-search {
+      opacity: 1;
+    }
+
+    #icon-search::placeholder {
+      color: #7d7d7d;
     }
 
     body {
@@ -97,7 +164,7 @@
       width: 100%;
       height: 100%;
       border-radius: 500px;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.15));
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.15));
       z-index: 0;
     }
 
@@ -153,6 +220,7 @@
     .tab {
       display: none;
       padding: 40px 20px;
+      position: relative;
     }
 
     @keyframes smoothFadeDown {
@@ -165,6 +233,12 @@
         opacity: 1;
         transform: translateY(0);
       }
+    }
+
+    #icons.tab.active {
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: 20px;
     }
 
     .tab.active {
@@ -208,13 +282,12 @@
       justify-content: center;
     }
 
-
     .icon-card {
       background: rgba(255, 255, 255, 0.07);
       border-radius: 15px;
       text-align: center;
       cursor: pointer;
-      transition: transform 0.2s ease, background 0.2s ease;
+      transition: transform 0.25s ease, background 0.2s ease, opacity 0.25s ease;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -223,6 +296,14 @@
       height: 150px;
       padding: 10px;
       gap: 8px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .icon-card.hidden {
+      opacity: 0;
+      transform: translateY(15px);
+      pointer-events: none;
     }
 
     .icon-card:hover {
@@ -365,7 +446,7 @@
       background: rgba(255,255,255,0.12);
     }
 
-    .tutorial-card img {
+    .thumbnail-container > img:first-child {
       width: 100%;
       display: block;
     }
@@ -379,6 +460,9 @@
     /* mobile scaling */
 
     @media (max-width: 768px) {
+      .search-bar {
+        top: 95px;
+      }
 
       body {
         padding-top: 85px;
@@ -430,6 +514,12 @@
         width: 100%;
         height: 110px;
         padding: 8px;
+        animation: fadeIn 0.3s ease;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
       }
 
       .icon-card img {
@@ -469,9 +559,60 @@
       font-weight: bold;
     }
 
-    a:hover{
+    a:hover {
       text-decoration: underline;
     }
+    
+
+  .thumbnail-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+  }
+
+  .thumbnail-container img:first-child {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    object-fit: cover;
+  }
+
+  .channel-avatar-glow {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: blur(8px);
+    opacity: 0.8;
+    transform: scale(1.15);
+    z-index: 4;
+  }
+
+  .channel-avatar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 5;
+  }
+
+  header {
+    z-index: 10000;
+  }
+
+  .video-container iframe {
+    position: relative;
+    z-index: 1;
+  }
+
+    
   </style>
 </head>
 <body>
@@ -509,7 +650,23 @@
   </section>
 
 <section id="icons" class="tab">
-  <div id="icons-container"></div>
+  <div class="search-bar" id="icon-search-bar">
+    <div class="search-wrapper" id="search-wrapper">
+      <img src="Icons/SearchBar.png" class="search-icon" id="search-icon">
+
+      <input
+        type="text"
+        id="icon-search"
+        placeholder="Search icons..."
+        oninput="searchIcons()"
+      >
+    </div>
+  </div>
+
+<div id="icons-container"></div>
+<p id="no-results" style="display:none; text-align:center; margin-top:40px; font-size:1.2rem;">
+  Sorry, no results were found. :(
+</p>
 </section>
 
 <section id="rbxls" class="tab">
@@ -550,12 +707,13 @@
     Rounds: ["RoundWon","RoundLost","RoundDraw"],
     Achievements: ["Trophy","RankedWins","MVP","Rewards","Favorite","Winstreak","Level"],
     Menu: ["Arrow","Back","Search","Category","Checkmark","Restart","Stopwatch","Region","Contract","Trash","Settings"],
-    Info: ["Ping","Sound","Video","Camera","Rivals"],
+    Info: ["Ping","Sound","Video","Camera"],
+    Logo: ["Rivals", "Rivals Festive", "Rivals Flat", "Rivals Flat Inverted"],
     Social: ["Player","Spectate","Trade"],
     Visual: ["PaintSplatter","Terrain","Wind"],
     System: ["Infinite","Keybind","Crosshair","Arcade"],
     Devices: ["Computer","Controller","Phone","VR","Devices"],
-    Ranks: ["Unranked","Bronze1","Bronze2","Bronze3","Silver1","Silver2","Silver3","Platinum1","Platinum2","Platinum3","Diamond1","Diamond2","Diamond3","Onyx1","Onyx2","Onyx3","Nemesis","Archnemesis"]
+    Ranks: ["Unranked","Unranked New","Bronze1","Bronze2","Bronze3","Silver1","Silver2","Silver3","Gold1","Gold2","Gold3","Platinum1","Platinum2","Platinum3","Diamond1","Diamond2","Diamond3","Onyx1","Onyx2","Onyx3","Nemesis","Archnemesis"]
   };
 
   const rbxlData = {
@@ -585,6 +743,8 @@
 
   const psdData = {
     "Labels": [
+      "Charm Reward",
+      "Queue (Editable)",
       "Leaderboard (Editable)",
       "Kill Feed (Editable)",
       "1v1",
@@ -608,31 +768,43 @@
     "Tutorials": [
       {
         title: "How to Make Roblox RIVALS Thumbnails",
-        youtube: "QE6ezmvvqhM"
+        youtube: "QE6ezmvvqhM",
+        channelIcon: "https://yt3.googleusercontent.com/76DIg_yyLqp4QcT8rETHGzVS1BSZmXOr1g0H5SFF9Bu2cIdEBzjA3M1kWAJj1lsQOqdZS8bHrn0=s160-c-k-c0x00ffffff-no-rj"
+      },
+      {
+        title: "Rivals Roblox GFX Tutorial #roblox #robloxgfx #gfx #tutorial #tips #blender3d #rivals #robloxrivals",
+        youtube: "RJSI-ZQ-GwE",
+        channelIcon: "https://yt3.googleusercontent.com/76DIg_yyLqp4QcT8rETHGzVS1BSZmXOr1g0H5SFF9Bu2cIdEBzjA3M1kWAJj1lsQOqdZS8bHrn0=s160-c-k-c0x00ffffff-no-rj"
       },
       {
         title: "How to use the Blender MIST PASS | Easy Depth of Field & Fog",
-        youtube: "HW3fRlVLlVg"
+        youtube: "HW3fRlVLlVg",
+        channelIcon: "https://yt3.googleusercontent.com/76DIg_yyLqp4QcT8rETHGzVS1BSZmXOr1g0H5SFF9Bu2cIdEBzjA3M1kWAJj1lsQOqdZS8bHrn0=s160-c-k-c0x00ffffff-no-rj"
       },
       {
         title: "FIX Roblox Studio to Blender Map Textures (Easy Exporting Guide)",
-        youtube: "daxc17ab32w"
+        youtube: "daxc17ab32w",
+        channelIcon: "https://yt3.googleusercontent.com/76DIg_yyLqp4QcT8rETHGzVS1BSZmXOr1g0H5SFF9Bu2cIdEBzjA3M1kWAJj1lsQOqdZS8bHrn0=s160-c-k-c0x00ffffff-no-rj"
       },
       {
         title: "how to separate energy pistols in blender",
-        youtube: "YOsqvYrxDBs"
+        youtube: "YOsqvYrxDBs",
+        channelIcon: "https://yt3.googleusercontent.com/eOf8nXBuZDNayF6uwfcwXUFFPDC0mi48_2OOu_cmhuuBwb1dObh96hh3kMUldweYRpt8T0hh=s160-c-k-c0x00ffffff-no-rj"
       },
       {
         title: "How to apply wraps on guns for rivals gfx",
-        youtube: "VkMINqvy46Q"
+        youtube: "VkMINqvy46Q",
+        channelIcon: "https://yt3.googleusercontent.com/eOf8nXBuZDNayF6uwfcwXUFFPDC0mi48_2OOu_cmhuuBwb1dObh96hh3kMUldweYRpt8T0hh=s160-c-k-c0x00ffffff-no-rj"
       },
       {
         title: "How To Make VIRAL Roblox Thumbnails.. | (Complete Roblox Thumbnail Tutorial)",
-        youtube: "lmxen_1gaUw"
+        youtube: "lmxen_1gaUw",
+        channelIcon: "https://yt3.googleusercontent.com/dy2Kf42SjVjVSWEtMzQfUYBFWFeKChtfW8gluIOx5IFUbMrXthP4QoVj0RALtySd8GXwP8POvQ=s160-c-k-c0x00ffffff-no-rj"
       },
       {
         title: "Key Weapon Texture Fix",
-        youtube: "aYpmnjILSJU"
+        youtube: "aYpmnjILSJU",
+        channelIcon: "https://yt3.googleusercontent.com/eOf8nXBuZDNayF6uwfcwXUFFPDC0mi48_2OOu_cmhuuBwb1dObh96hh3kMUldweYRpt8T0hh=s160-c-k-c0x00ffffff-no-rj"
       }
     ]
   };
@@ -649,6 +821,9 @@
 
     document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active-tab'));
     button.classList.add('active-tab');
+
+    const searchBar = document.getElementById("icon-search-bar");
+    searchBar.style.display = tabId === "icons" ? "flex" : "none";
 
     if (tabId === "icons" && !iconsLoaded) {
       generateIcons();
@@ -830,7 +1005,11 @@
         const thumbnail = `https://img.youtube.com/vi/${video.youtube}/hqdefault.jpg`;
 
         card.innerHTML = `
-          <img src="${thumbnail}" loading="lazy">
+          <div class="thumbnail-container">
+            <img src="${thumbnail}" loading="lazy">
+            <img class="channel-avatar-glow" src="${video.channelIcon}">
+            <img class="channel-avatar" src="${video.channelIcon}">
+          </div>
           <p>${video.title}</p>
         `;
 
@@ -844,6 +1023,79 @@
       container.appendChild(grid);
     });
   }
+
+  function searchIcons() {
+    const query = document.getElementById("icon-search").value.toLowerCase();
+    const container = document.getElementById("icons-container");
+    const sections = container.querySelectorAll("h2");
+    const noResults = document.getElementById("no-results");
+
+    let totalMatches = 0;
+
+    sections.forEach(title => {
+      const grid = title.nextElementSibling;
+      const cards = grid.querySelectorAll(".icon-card");
+
+      let categoryMatches = 0;
+
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+
+        if (text.includes(query)) {
+          card.style.display = "flex";
+
+          requestAnimationFrame(() => {
+            card.classList.remove("hidden");
+          });
+
+          categoryMatches++;
+          totalMatches++;
+        } else {
+          card.classList.add("hidden");
+
+          setTimeout(() => {
+            card.style.display = "none";
+          }, 200);
+        }
+      });
+
+      if (categoryMatches === 0) {
+        title.style.display = "none";
+        grid.style.display = "none";
+      } else {
+        title.style.display = "block";
+        grid.style.display = "grid";
+      }
+    });
+
+    noResults.style.display = totalMatches === 0 ? "block" : "none";
+  }
+
+  const searchWrapper = document.getElementById("search-wrapper");
+  const searchInput = document.getElementById("icon-search");
+
+  searchWrapper.addEventListener("click", () => {
+    searchWrapper.classList.add("expanded");
+    searchInput.focus();
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!searchWrapper.contains(e.target)) {
+
+      if (searchInput.value === "") {
+        searchWrapper.classList.remove("expanded");
+      }
+
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "/") {
+      e.preventDefault();
+      searchWrapper.classList.add("expanded");
+      searchInput.focus();
+    }
+  });
 </script>
 </body>
 </html>

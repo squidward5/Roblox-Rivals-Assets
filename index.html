@@ -3,18 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="Free Roblox Rivals Assets - Icons, RBXL files, PSDs, and more!">
-      
   <meta property="og:title" content="Roblox Rivals Assets"/>
   <meta property="og:description" content="Free Roblox Rivals Assets - Icons, RBXL files, PSDs, and more!"/>
-  <meta property="og:image" content="/RRA.png"/>
+  <meta property="og:image" content="https://squidward5.github.io/Roblox-Rivals-Assets/RRA.png"/>
   <meta property="og:url" content="https://squidward5.github.io/Roblox-Rivals-Assets/"/>
   <meta property="og:type" content="website"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta property="og:site_name" content="Roblox Rivals Assets">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image"> <!-- discord sometimes uses reads twitter before og so ill use this aswell - zay (3/11/2026) -->
+  <meta name="twitter:title" content="Roblox Rivals Assets"> 
+  <meta name="twitter:description" content="Free Roblox Rivals Assets - Icons, RBXL files, PSDs, and more!">
+  <meta name="twitter:image" content="https://squidward5.github.io/Roblox-Rivals-Assets/RRA.png">
   <meta name="theme-color" content="#00acff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>Roblox Rivals Assets</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <link rel="icon" type="image/x-icon" href="https://squidward5.github.io/Roblox-Rivals-Assets/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
-  <style>
+
+<style>
     * {
       margin: 0;
       padding: 0;
@@ -24,7 +33,6 @@
 
     ::-webkit-scrollbar {
       display: none;
-      width: 6px;
     }
 
     ::-webkit-scrollbar-thumb {
@@ -110,7 +118,8 @@
       flex-direction: column;
       padding-top: 100px;
       overflow-y: auto;
-      scrollbar-width: thin;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
 
 
@@ -611,10 +620,8 @@
   .video-container iframe {
     position: relative;
     z-index: 1;
-  }
-
-    
-  </style>
+  } 
+</style>  
 </head>
 <body>
   <header>
@@ -624,12 +631,12 @@
         <div class="logo">Roblox Rivals Assets</div>
       </div>
       <nav>
-        <button type="button" onclick="showTab('home', this)" class="active-tab">Home</button>
-        <button type="button" onclick="showTab('icons', this)">Icons</button>
-        <button type="button" onclick="showTab('rbxls', this)">RBXLs</button>
-        <button type="button" onclick="showTab('psds', this)">PSDs</button>
-        <button type="button" onclick="showTab('tutorials', this)">Tutorials</button>
-        <button type="button" onclick="showTab('support', this)">Support</button>
+        <button aria-label="Go to Home tab" type="button" onclick="showTab('home', this)" class="active-tab">Home</button>
+        <button aria-label="Go to Icons tab" type="button" onclick="showTab('icons', this)">Icons</button>
+        <button aria-label="Go to RBXLs tab" type="button" onclick="showTab('rbxls', this)">RBXLs</button>
+        <button aria-label="Go to PSDs tab" type="button" onclick="showTab('psds', this)">PSDs</button>
+        <button aria-label="Go to Tutorials tab" type="button" onclick="showTab('tutorials', this)">Tutorials</button>
+        <button aria-label="Go to Support tab" type="button" onclick="showTab('support', this)">Support</button>
       </nav>
     </div>
   </header>
@@ -939,6 +946,7 @@
       .replace(/([a-z])([A-Z])/g, '$1 $2')
       .trim();
   }
+
   function openPopup(fileSrc, altText = "Asset Preview", previewSrc = null) {
     const overlay = document.getElementById('popup-overlay');
     const popupImage = document.getElementById('popup-image');

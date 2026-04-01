@@ -2,26 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Free Roblox Rivals Assets - Icons, RBXL files, PSDs, and more!">
-  <meta property="og:title" content="Roblox Rivals Assets"/>
-  <meta property="og:description" content="Free Roblox Rivals Assets - Icons, RBXL files, PSDs, and more!"/>
-  <meta property="og:image" content="https://squidward5.github.io/Roblox-Rivals-Assets/RRA.png"/>
+  <meta name="description" content="Free EVIL Rivals Assets - Icons, RBXL files, PSDs, and more!">
+  <meta property="og:title" content="EVIL Rivals Assets"/>
+  <meta property="og:description" content="Free EVIL Rivals Assets - Icons, RBXL files, PSDs, and more!"/>
+  <meta property="og:image" content="https://squidward5.github.io/Roblox-Rivals-Assets/RRA_aprilfools.png?v=2"/>
   <meta property="og:url" content="https://squidward5.github.io/Roblox-Rivals-Assets/"/>
   <meta property="og:type" content="website"/>
-  <meta property="og:site_name" content="Roblox Rivals Assets">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="EVIL Rivals Assets">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
   <meta name="twitter:card" content="summary_large_image"> <!-- discord sometimes uses reads twitter before og so ill use this aswell - zay (3/11/2026) -->
-  <meta name="twitter:title" content="Roblox Rivals Assets"> 
-  <meta name="twitter:description" content="Free Roblox Rivals Assets - Icons, RBXL files, PSDs, and more!">
-  <meta name="twitter:image" content="https://squidward5.github.io/Roblox-Rivals-Assets/RRA.png">
+  <meta name="twitter:title" content="EVIL Rivals Assets"> 
+  <meta name="twitter:description" content="Free EVIL Rivals Assets - Icons, RBXL files, PSDs, and more!">
+  <meta name="twitter:image" content="https://squidward5.github.io/Roblox-Rivals-Assets/RRA_aprilfools.png?v=2">
   <meta name="theme-color" content="#00acff">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Roblox Rivals Assets</title>
-
-  <link rel="icon" type="image/x-icon" href="https://squidward5.github.io/Roblox-Rivals-Assets/favicon.ico">
+  <title>EVIL Rivals Assets</title>
+  <link rel="icon" type="image/x-icon" href="https://squidward5.github.io/Roblox-Rivals-Assets/favicon_aprilfools.ico">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+  <script src="https://www.youtube.com/iframe_api"></script>
 
 <style>
     * {
@@ -35,11 +35,6 @@
       display: none;
     }
 
-    ::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 3px;
-    }
-
     .search-bar {
       position: sticky;
       top: 125px;
@@ -47,10 +42,12 @@
       display: flex;
       justify-content: center;
       z-index: 999;
+      padding: 0 15px;
     }
 
     .search-bar .nav-container {
-      max-width: 1200px;
+      max-width: 500px;
+      width: 100%;
     }
 
     .search-wrapper {
@@ -65,6 +62,8 @@
       overflow: hidden;
       transition: all 0.3s cubic-bezier(.25,.8,.25,1);
       position: relative;
+      justify-content: space-between;
+      padding-right: 5px;
     }
 
     .search-wrapper:hover {
@@ -108,10 +107,11 @@
     }
 
     body {
-      background-image: url('RRA_BG.png');
+      background-image: url('RRA_BGaprilfools.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      background-attachment: fixed;
       color: #fff;
       min-height: 100vh;
       display: flex;
@@ -120,6 +120,7 @@
       overflow-y: auto;
       -ms-overflow-style: none;
       scrollbar-width: none;
+      overflow-x: hidden;
     }
 
 
@@ -139,7 +140,7 @@
     .logo {
       font-size: 1.7rem;
       font-weight: bold;
-      background: linear-gradient(to top, #00acff, #00e4ff);
+      background: linear-gradient(to top, #ff0000, #ff0000);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -263,7 +264,7 @@
 
     .tab h1 {
       font-size: clamp(2.5rem, 8vw, 6rem);
-      background: linear-gradient(to top, #00acff, #00e4ff);
+      background: linear-gradient(to top, #ff0000, #ff0000);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -273,6 +274,10 @@
     .tab h2 {
       font-size: clamp(1.25rem, 4vw, 2.5rem);
       color: #fff;
+      background: linear-gradient(to top, rgb(255, 0, 0), #ff0000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       margin: 15px 0;
     }
 
@@ -293,21 +298,23 @@
     }
 
     .icon-card {
-      background: rgba(255, 255, 255, 0.07);
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(12px);
       border-radius: 15px;
       text-align: center;
       cursor: pointer;
-      transition: transform 0.25s ease, background 0.2s ease, opacity 0.25s ease;
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      transition: all 0.2s ease;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       width: 150px;
-      height: 150px;
+      max-width: 150px;
+      aspect-ratio: 1 / 1;
       padding: 10px;
       gap: 8px;
-      opacity: 1;
-      transform: translateY(0);
     }
 
     .icon-card.hidden {
@@ -317,9 +324,9 @@
     }
 
     .icon-card:hover {
-      transform: scale(1.05);
-      background: rgba(255, 255, 255, 0.12);
-      z-index: 10;
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.45);
+      background: rgba(255,255,255,0.06);
     }
 
     .icon-card img {
@@ -334,6 +341,8 @@
       margin: 0;
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 100%;
     }
 
     #popup-overlay {
@@ -342,23 +351,25 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.85);
+      background: radial-gradient(circle at center, rgba(0,0,0,0.4), rgba(0, 0, 0, 0.65));
       display: flex;
       justify-content: center;
       align-items: center;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.2s ease;
+      transition: opacity 0.25s ease, backdrop-filter 0.25s ease;
       z-index: 9999;
+      backdrop-filter: blur(0px);
     }
 
     #popup-overlay.active {
       opacity: 1;
       pointer-events: auto;
+      backdrop-filter: blur(6px);
     }
 
     .popup-box {
-      background: rgba(19, 19, 19, 0.795);
+      background: linear-gradient(to top, rgba(6, 6, 6, 0.75), rgba(20, 20, 20, 0.75));
       width: 90%;
       max-width: 400px;
       max-height: 80vh;
@@ -368,6 +379,9 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
+      transition: transform 0.35s cubic-bezier(.25,.8,.25,1), opacity 0.25s ease;
+      transform: translateY(60px);
+      opacity: 0;
     }
 
     .popup-box img {
@@ -376,19 +390,35 @@
       margin: 15px 0;
     }
 
+    #popup-overlay.active .popup-box {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    #popup-overlay.closing .popup-box {
+      transform: translateY(60px);
+      opacity: 0;
+    }
+
     .download-btn {
-      background: #00cfff;
+      background: linear-gradient(to top, #c40000, #ff0000);
       border: none;
       padding: 10px 30px;
       font-size: 1rem;
       font-weight: bold;
-      border-radius: 8px;
+      border-radius: 12px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: all 0.2s ease;
     }
 
     .download-btn:hover {
-      background: #0099cc;
+      transform: scale(1.07);
+      box-shadow: 0 0px 15px #00d0ff79;
+    }
+
+    .download-btn:active {
+      transform: scale(0.95);
+      box-shadow: 0 0px 15px #00d0ff79;
     }
 
     .tab-icon {
@@ -422,13 +452,15 @@
     }
 
     .discordinvite {
-      transition: 0.15s ease;
+      transition: all 0.2s ease;
       cursor: pointer;
       border-radius: 12px;
+      overflow: hidden;
     }
 
     .discordinvite:hover {
       transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 
     .discordinvite:active {
@@ -437,23 +469,30 @@
 
     .tutorials-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      max-width: 1200px;
+      width: 100%;
+      max-width: 1100px;
       margin: 0 auto;
+      padding: 0 15px;
+      justify-items: center;
     }
 
     .tutorial-card {
-      background: rgba(255,255,255,0.07);
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255,255,255,0.05);
       border-radius: 15px;
       cursor: pointer;
-      transition: transform 0.2s ease, background 0.2s ease;
+      transition: all 0.2s ease;
       overflow: hidden;
+      width: 100%;
+      max-width: 350px;
     }
 
     .tutorial-card:hover {
       transform: scale(1.04);
       background: rgba(255,255,255,0.12);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 
     .thumbnail-container > img:first-child {
@@ -467,7 +506,93 @@
       text-align: center;
     }
 
+    #tutorials-container h2 {
+      text-align: center;
+      margin: 40px 0 20px 0;
+    }
+
     /* mobile scaling */
+
+    /* extra small device navbar fix */
+    @media (max-width: 500px) {
+
+      header {
+        padding: 8px 10px;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 20px;
+      }
+
+      .logo-container {
+        justify-content: center;
+        margin-left: 0;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      
+
+      nav button {
+        font-size: 0.85rem;
+        padding: 4px 6px;
+      }
+
+      .tab-icon {
+        width: 40px;
+        height: 40px;
+      }
+
+      .logo {
+        font-size: 1rem;
+      }
+
+      .search-bar {
+        top: 120px;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      nav button {
+        font-size: 0.75rem;
+        padding: 2px 4px;
+        transform: scale(0.9);
+      }
+
+      nav button::after {
+        bottom: -3px;
+        height: 2px;
+      }
+
+      .icon-card {
+        width: 100%;
+        max-width: 140px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        justify-content: center;
+      }
+
+
+    }
+
+    @media (max-width: 430px) {
+      nav button {
+        font-size: 0.7rem;
+        transform: scale(0.85);
+      }
+    }
 
     @media (max-width: 768px) {
       .search-bar {
@@ -515,14 +640,23 @@
         font-size: 0.95rem;
       }
 
+      p {
+        white-space: normal;
+      }
+
       .icons-grid {
-        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-        gap: 14px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+        gap: 20px;
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        justify-items: center;
       }
 
       .icon-card {
         width: 100%;
-        height: 110px;
+        aspect-ratio: 1 / 1;
         padding: 8px;
         animation: fadeIn 0.3s ease;
       }
@@ -537,7 +671,7 @@
         height: 55px;
       }
 
-      .icon-card p{
+      .icon-card p {
         font-size: 0.75rem;
       }
 
@@ -557,8 +691,102 @@
       }
 
       .discordinvite img {
-        width: 90%;
-        max-width: 320px;
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+    }
+
+    @media (max-width: 500px) {
+
+      body {
+        padding-top: 80px;
+      }
+
+      header {
+        padding: 8px 10px;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 20px;
+      }
+
+      .logo-container {
+        justify-content: center;
+        margin-left: 0;
+        gap: 8px;
+      }
+
+      .logo {
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      nav button {
+        font-size: 0.8rem;
+      }
+
+      .tab-icon {
+        width: 35px;
+        height: 35px;
+      }
+
+      .tab {
+        padding: 20px 12px;
+      }
+
+      .tab h1 {
+        font-size: clamp(1.6rem, 9vw, 2.2rem);
+      }
+
+      .tab h2 {
+        font-size: clamp(1rem, 5vw, 1.3rem);
+      }
+
+      .tab p {
+        font-size: 0.85rem;
+      }
+
+      .video-container iframe {
+        width: 95vw;
+        height: calc(95vw * 0.5625);
+      }
+
+      .icons-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      .icon-card {
+        width: 100%;
+        max-width: 140px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        justify-content: center;
+      }
+
+      .icon-card img {
+        width: 45px;
+        height: 45px;
+      }
+
+      .icon-card p {
+        font-size: 0.7rem;
+      }
+
+      .search-bar {
+        top: 110px;
       }
 
     }
@@ -569,21 +797,25 @@
       font-weight: bold;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .content-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
     
 
   .thumbnail-container {
     position: relative;
     width: 100%;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     display: block;
   }
 
   .thumbnail-container img:first-child {
-    width: 100%;
-    aspect-ratio: 16 / 9;
+    width: 100% !important;
+    height: 100% !important;
     display: block;
     object-fit: cover;
   }
@@ -617,18 +849,219 @@
     z-index: 10000;
   }
 
+  .video-container {
+    width: 90%;
+    max-width: 800px;
+  }
+
   .video-container iframe {
+    width: 100% !important; 
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+  }
+
+  .search-modes {
+    display: flex;
+    gap: 5px;
+    margin-right: 10px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .search-mode {
+    background: rgba(255,255,255,0.06);
+    border: none;
+    color: #cfcfcf;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .search-wrapper.expanded .search-modes {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .search-mode:hover {
+    background: rgba(255,255,255,0.12);
+  }
+
+  .search-mode.active {
+    background: linear-gradient(to top,#ff0000,#ff0000);
+    color: white;
+  }
+
+  .search-modes {
+    transform: translateX(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .search-wrapper.expanded .search-modes {
+    transform: translateX(0);
+  }
+
+  .update-card {
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 700px;
+    text-align: left;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+  }
+
+  .update-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+  }
+
+  .update-card h3 {
+    font-size: 1.4rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .update-card .title-text {
+    background: linear-gradient(to top, #ff0000, #ff0000);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .update-card .date-header {
+    font-size: 0.85rem;
+    color: #b5bac1;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 10px;
+  }
+
+  .update-description h4 {
+    margin: 15px 0 8px 0;
+    display: flex;
+    align-items: center;
+    font-size: 1.05rem;
+    color: #ffffff;
+  }
+
+  .update-description ul {
+    list-style: none;
+    padding-left: 10px;
+  }
+
+  .update-description li {
+    color: #dbdee1;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
     position: relative;
-    z-index: 1;
-  } 
+    padding-left: 15px;
+  }
+
+  .update-description li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #00cfff;
+  }
+
+  .update-description b {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  #updates-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .underline-link {
+    position: relative;
+    display: inline-block;
+    color: #3ddbff;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .underline-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(to right, #ff0000, #ff0000);
+    border-radius: 2px;
+    transition: width 0.25s ease;
+  }
+
+  .underline-link:hover::after {
+    width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    .icons-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+      
+    .icon-card p { 
+      font-size: 0.65rem; 
+    }
+  }
+
+  @media (max-width: 500px) {
+    .search-wrapper {
+      height: 40px;
+      width: 40px;
+      padding-right: 8px;
+      top: 20px;
+    }
+
+    .search-wrapper.expanded {
+      width: min(400px, 80vw);
+    }
+
+    .search-icon {
+      width: 15px;
+      height: 15px;
+      margin-left: 12px;
+    }
+
+    #icon-search {
+      font-size: 0.85rem;
+      margin-left: 10px;
+    }
+
+    .search-mode {
+      font-size: 0.65rem;
+      padding: 3px 6px;
+      border-radius: 6px;
+    }
+
+    .search-modes {
+      gap: 3px;
+      margin-right: 5px;
+    }
+  }
 </style>  
 </head>
 <body>
   <header>
     <div class="nav-container">
       <div class="logo-container">
-        <img src="RRA.png" alt="Site Icon" class="tab-icon">
-        <div class="logo">Roblox Rivals Assets</div>
+        <img src="RRA_aprilfools.png" alt="Site Icon" class="tab-icon">
+        <div class="logo">EVIL Rivals Assets</div>
       </div>
       <nav>
         <button aria-label="Go to Home tab" type="button" onclick="showTab('home', this)" class="active-tab">Home</button>
@@ -636,31 +1069,36 @@
         <button aria-label="Go to RBXLs tab" type="button" onclick="showTab('rbxls', this)">RBXLs</button>
         <button aria-label="Go to PSDs tab" type="button" onclick="showTab('psds', this)">PSDs</button>
         <button aria-label="Go to Tutorials tab" type="button" onclick="showTab('tutorials', this)">Tutorials</button>
-        <button aria-label="Go to Support tab" type="button" onclick="showTab('support', this)">Support</button>
+        <button aria-label="Go to Updates tab" type="button" onclick="showTab('updates', this)">Updates</button>
+        <button aria-label="Go to Discord tab" type="button" onclick="showTab('discord', this)">Discord</button>
       </nav>
     </div>
   </header>
 
   <section id="home" class="tab active">
-    <h2>Welcome to</h2>
-    <h1>Roblox Rivals Assets</h1>
-
+    <h2 style="margin-bottom: -10px;">Welcome to</h2>
+    <h1>EVIL Rivals Assets</h1>
+    <p style="margin-bottom: 25px;">Your one-stop shop for free EVIL Rivals assets. Find icons, RBXL files, PSDs, and tutorials to help you create amazing EVIL Rivals content.</p>
     <div class="video-container">
       <iframe 
+        id="home-video"
         src="https://www.youtube.com/embed/iVdWZm-Yz1g"
         frameborder="0"
-        style="width: 30vw; height: 30vh; border-radius: 12px; margin-top: 30px;"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
       </iframe>
     </div>
-    <p>website created by <a href="https://github.com/squidward5" target="_blank" rel="noopener noreferrer">zay</a></p>
+    <p>Website created by <a href="https://github.com/squidward5" target="_blank" rel="noopener noreferrer" class="underline-link">zay</a></p>
+    <p id="last-updated" style="text-align:center; margin-top:-10px; color: #cfcfcf;"></p>
+    <p style="text-align:center; margin-top:-10px; color: #cfcfcf;">This site is still in beta. Please report any bugs in our <a href="https://discord.gg/RgKWASPUGU" target="_blank" rel="noopener noreferrer" class="underline-link">Discord server</a>.</p>
+</div>
   </section>
 
 <section id="icons" class="tab">
   <div class="search-bar" id="icon-search-bar">
     <div class="search-wrapper" id="search-wrapper">
       <img src="Icons/SearchBar.png" class="search-icon" id="search-icon">
+      
 
       <input
         type="text"
@@ -668,13 +1106,17 @@
         placeholder="Search icons..."
         oninput="searchIcons()"
       >
+      <div class="search-modes">
+        <button id="icon-mode" class="search-mode active">Icons</button>
+        <button id="category-mode" class="search-mode">Categories</button>
+      </div>
     </div>
   </div>
 
-<div id="icons-container"></div>
-<p id="no-results" style="display:none; text-align:center; margin-top:40px; font-size:1.2rem;">
-  Sorry, no results were found. :(
-</p>
+<div class="content-container">
+  <div id="icons-container"></div>
+</div>
+<p id="no-results" style="display:none; text-align:center; margin-top:40px; font-size:1.2rem;">Sorry, no results were found. :(</p>
 </section>
 
 <section id="rbxls" class="tab">
@@ -685,12 +1127,12 @@
   <div id="psd-container"></div>
 </section>
 
-<section id="support" class="tab">
-  <h2>Support</h2>
-  <p>Need help? Contact us on our Discord server!</p>
-  <a href="https://discord.gg/RgKWASPUGU">
+<section id="discord" class="tab">
+  <h2>Discord</h2>
+  <p style="margin-top: -5px;">Need help? Contact us on our Discord server!</p>
+  <a href="https://discord.gg/RgKWASPUGU" target="_blank" rel="noopener noreferrer">
     <div class="discordinvite">
-      <img src="Discord Invite.png" loading="lazy">
+      <img src="Discord Invite aprilfools.png" loading="lazy">
     </div>
   </a>
 </section>
@@ -699,53 +1141,68 @@
   <div id="tutorials-container"></div>
 </section>
 
+<section id="updates" class="tab">
+  <h2>Updates</h2>
+  <div id="updates-container"></div>
+</section>
+
 <div id="popup-overlay" onclick="closePopup()">
   <div class="popup-box" onclick="event.stopPropagation()">
     <div id="popup-label" style="font-size:1.6rem;font-weight:bold;color:#ffffff;"></div>
     <img id="popup-image" src="" alt="">
-    <button class="download-btn" onclick="downloadImage()">Download</button>
+    <div id="popup-buttons" style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+      <button id="download-btn" class="download-btn" onclick="downloadImage()">Download</button>
+
+      <button id="dropbox-btn" class="download-btn" style="display:none;" onclick="openDropbox()">Download (Dropbox)</button>
+      <button id="gdrive-btn" class="download-btn" style="display:none;" onclick="openDrive()">Download (Google Drive)</button>
+    </div>
   </div>
 </div>
 
 <script>
   const iconsData = {
-    Gameplay: ["Play","Exit","Leave","Spawn","Shoot","Combat","Punch","Scythe","Hammer","Grenade","Weapon","Charm","Wrap","Wrap2","Shuffle","Bullet","Loadout1","Loadout2"],
-    Interface: ["Health","Shield","Indicator","Warning","Death","Lock","Unlocked","Ban","Gift","DailyTasks","Basket","Key"],
+    Gameplay: ["Play","Exit","Leave","Spawn","Shoot","Combat","Punch","Scythe","Hammer","Grenade","Weapon","Charm","Wrap","Wrap2","Shuffle","Bullet","Loadout1","Loadout2", "Explosion", "Scope", "Scoped", "Headshot", "Scope Star", "Noscope", "Blinded"],
+    Interface: ["Health","Shield","Indicator","Warning","Death","Lock","Unlocked","Ban","Gift","DailyTasks","Basket", "Mailbox", "Map"],
     Profile: ["1v1","Invite","Close","ViewProfile"],
     Rounds: ["RoundWon","RoundLost","RoundDraw"],
-    Achievements: ["Trophy","RankedWins","MVP","Rewards","Favorite","Winstreak","Level"],
-    Menu: ["Arrow","Back","Search","Category","Checkmark","Restart","Stopwatch","Region","Contract","Trash","Settings"],
+    Achievements: ["Trophy","RankedWins","MVP","Rewards","Favorite","Winstreak","Level", "Level New", "Season Level"],
+    Menu: ["Arrow","Back","Search","Category","Checkmark","Checkbox","Restart","Stopwatch","Region","Contract","Trash","Settings","Streak Safety"],
     Info: ["Ping","Sound","Video","Camera"],
-    Logo: ["Rivals", "Rivals Festive", "Rivals Flat", "Rivals Flat Inverted"],
-    Social: ["Player","Spectate","Trade"],
-    Visual: ["PaintSplatter","Terrain","Wind"],
-    System: ["Infinite","Keybind","Crosshair","Arcade"],
-    Devices: ["Computer","Controller","Phone","VR","Devices"],
+    Logo: ["Rivals", "Rivals Festive", "Rivals Flat", "Rivals Flat Inverted", "NG", "Nosniy", "Nosniy Inc", "Sensei", "Sensei & Co"],
+    Social: ["Player","Spectate", "Spectate2","Trade", "Emote"],
+    Visual: ["PaintSplatter","PaintSplatter2","Terrain","Wind"],
+    System: ["Infinite","Keybind","Crosshair","Arcade", "Boost", "Queue Pad"],
+    Devices: ["Computer","Computer (Filled)","Controller","Phone","VR","Devices"],
+    Currencies: ["Key","Key2","Key3","Candy","Crystal","Glory", "Rarity", "Gift Ticket", "Skin Ticket"],
+    Bundles: ["Standard Bundle","Prime Bundle","Contraband Bundle", "Silver Bag", "Gold Bag", "Regular Battlepass", "Exclusive Battlepass", "Wing"],
     Ranks: ["Unranked","Unranked New","Bronze1","Bronze2","Bronze3","Silver1","Silver2","Silver3","Gold1","Gold2","Gold3","Platinum1","Platinum2","Platinum3","Diamond1","Diamond2","Diamond3","Onyx1","Onyx2","Onyx3","Nemesis","Archnemesis"]
   };
 
   const rbxlData = {
     "Latest Files": [
-      {title:"(RRA) UPDATE 18 - Our Labor of Love Update (02-14-2026)", url:"https://www.dropbox.com/scl/fi/002rpt4ndvkvymriulio1/RRA-UPDATE-18-Our-Labor-of-Love-Update-02-14-2026.rbxlx?dl=1"},
-      {title:"(RRA) Christmas Part 2 Update (includes Iceberg) (12-24-2025)", url:"https://www.dropbox.com/scl/fi/dhb8dmq05rwi7qype5jtd/RRA-Christmas-Part-2-Update-includes-Iceberg-12-24-2025-.rbxlx.rbxlx?dl=1"},
-      {title:"(RRA) Christmas Part 2 Update (includes Village) (12-24-2025)", url:"https://www.dropbox.com/scl/fi/i4tku90h7cwi2s7ruhe6r/RRA-Christmas-Part-2-Update-includes-Village-12-24-2025-.rbxlx.rbxlx?dl=1"},
-      {title:"(RRA) Christmas Season 2 (12-12-2025)", url:"https://www.dropbox.com/scl/fi/gxu3el71kg9xmriks2vxe/RRA-Christmas-Season-2-12-12-2025.rbxlx?dl=1"},
-      {title:"(RRA) Rivals Assets (Tower Gamemode)", url:"https://www.dropbox.com/scl/fi/437t83zt3i744jspe4h9t/RRA-Rivals-Assets-Tower-Gamemode.rbxlx?dl=1"},
-      {title:"(RRA) Part 2 Update (10-27-2025)", url:"https://www.dropbox.com/scl/fi/3cdmq78hg2vfnliwrlnwm/RRA-Part-2-Update-10-27-2025.rbxlx?dl=1"},
-      {title:"(RRA) Halloween Update (10-24-2025)", url:"https://www.dropbox.com/scl/fi/h4lqrl7gsdu5aujy9g7cg/RRA-Halloween-Update-10-24-2025.rbxlx?dl=1"},
-      {title:"(RRA) Rivals Assets (contains Big Onyx)", url:"https://www.dropbox.com/scl/fi/d4tnivx38hrgxtkfabqf0/RRA-Rivals-Assets-contains-Big-Onyx.rbxlx?dl=1"},
-      {title:"(RRA) Rivals Assets (contains Dimension)", url:"https://www.dropbox.com/scl/fi/qfl2ptdm6nejbn04ebar3/RRA-Rivals-Assets-contains-Dimension.rbxlx?dl=1"}
+      {title:"(RRA) Rivals Assets (contains Factory)", url:"RBXLs/(RRA) Rivals Assets (contains Factory).rbxl"},
+      {title:"(RRA) Rivals Assets (contains Sandbox)", url:"RBXLs/(RRA) Rivals Assets (contains Sandbox).rbxl"},
+      {title:"(RRA) Rivals Assets (contains Spleef)", url:"RBXLs/(RRA) Rivals Assets (contains Spleef).rbxl"},
+      {title:"(RRA) UPDATE 18 - Our Labor of Love Update (02-14-2026)", dropbox:"https://www.dropbox.com/scl/fi/002rpt4ndvkvymriulio1/RRA-UPDATE-18-Our-Labor-of-Love-Update-02-14-2026.rbxlx?dl=1", drive:"https://drive.google.com/uc?export=download&id=1SJ7sZpJ2wDz_VeXihHgU81cAfoSvz5Ts"},
+      {title:"(RRA) Christmas Part 2 Update (includes Iceberg) (12-24-2025)", dropbox:"https://www.dropbox.com/scl/fi/dhb8dmq05rwi7qype5jtd/RRA-Christmas-Part-2-Update-includes-Iceberg-12-24-2025-.rbxlx.rbxlx?dl=1"},
+      {title:"(RRA) Christmas Part 2 Update (includes Village) (12-24-2025)", dropbox:"https://www.dropbox.com/scl/fi/i4tku90h7cwi2s7ruhe6r/RRA-Christmas-Part-2-Update-includes-Village-12-24-2025-.rbxlx.rbxlx?dl=1"},
+      {title:"(RRA) Christmas Season 2 (12-12-2025)", dropbox:"https://www.dropbox.com/scl/fi/gxu3el71kg9xmriks2vxe/RRA-Christmas-Season-2-12-12-2025.rbxlx?dl=1"},
+      {title:"(RRA) Rivals Assets (Tower Gamemode)", dropbox:"https://www.dropbox.com/scl/fi/437t83zt3i744jspe4h9t/RRA-Rivals-Assets-Tower-Gamemode.rbxlx?dl=1"},
+      {title:"(RRA) Part 2 Update (10-27-2025)", dropbox:"https://www.dropbox.com/scl/fi/3cdmq78hg2vfnliwrlnwm/RRA-Part-2-Update-10-27-2025.rbxlx?dl=1"},
+      {title:"(RRA) Halloween Update (10-24-2025)", dropbox:"https://www.dropbox.com/scl/fi/h4lqrl7gsdu5aujy9g7cg/RRA-Halloween-Update-10-24-2025.rbxlx?dl=1"},
+      {title:"(RRA) Rivals Assets (contains Big Onyx)", dropbox:"https://www.dropbox.com/scl/fi/d4tnivx38hrgxtkfabqf0/RRA-Rivals-Assets-contains-Big-Onyx.rbxlx?dl=1"},
+      {title:"(RRA) Rivals Assets (contains Dimension)", dropbox:"https://www.dropbox.com/scl/fi/qfl2ptdm6nejbn04ebar3/RRA-Rivals-Assets-contains-Dimension.rbxlx?dl=1"}
     ],
 
     "Old Files": [
-      {title:"(RRA) Rivals Assets 9-26-2025", url:"https://www.dropbox.com/scl/fi/ed23ha2q4vliybc2u039t/RRA-Rivals-Assets-9-26-2025.rbxlx?dl=1"},
-      {title:"(RRA) Rivals Assets (contains Station Map)", url:"https://www.dropbox.com/scl/fi/p1oq18hkp4zugczbrbxxa/RRA-Rivals-Assets-contains-Station-Map.rbxlx?dl=1"},
-      {title:"Rivals Assets (8/24/2025)", url:"https://www.dropbox.com/scl/fi/sn8ein4jnm794ghrdv30u/Rivals-Assets-8-24-2025.rbxlx?dl=1"},
-      {title:"Rivals Assets & Battleground Map", url:"https://www.dropbox.com/scl/fi/guenan9hitjukhn262ft6/Rivals-Assets-contains-New-Battleground-Map.rbxlx?dl=1"},
+      {title:"(RRA) Rivals Assets 9-26-2025", dropbox:"https://www.dropbox.com/scl/fi/ed23ha2q4vliybc2u039t/RRA-Rivals-Assets-9-26-2025.rbxlx?dl=1" },
+      {title:"(RRA) Rivals Assets (contains Station Map)", dropbox:"https://www.dropbox.com/scl/fi/p1oq18hkp4zugczbrbxxa/RRA-Rivals-Assets-contains-Station-Map.rbxlx?dl=1"},
+      {title:"Rivals Assets (8/24/2025)", dropbox:"https://www.dropbox.com/scl/fi/sn8ein4jnm794ghrdv30u/Rivals-Assets-8-24-2025.rbxlx?dl=1"},
+      {title:"Rivals Assets & Battleground Map", dropbox:"https://www.dropbox.com/scl/fi/guenan9hitjukhn262ft6/Rivals-Assets-contains-New-Battleground-Map.rbxlx?dl=1"},
       {title:"Rivals Maps", url:"RBXLs/Rivals Maps.rbxl"},
       {title:"Rivals Models", url:"RBXLs/Rivals Models.rbxl"},
       {title:"Rivals Skins", url:"RBXLs/Rivals Skins.rbxl"},
-      {title:"Rivals Skins and Weapons (7/24/2025)", url:"https://www.dropbox.com/scl/fi/kr35b0xf9vfvpfi48h13s/Rivals-Skins-and-Weapons-7-24-2025.rbxlx?dl=1"}
+      {title:"Rivals Skins and Weapons (7/24/2025)", dropbox:"https://www.dropbox.com/scl/fi/kr35b0xf9vfvpfi48h13s/Rivals-Skins-and-Weapons-7-24-2025.rbxlx?dl=1"}
     ]
   };
 
@@ -765,6 +1222,7 @@
     ],
 
     "Stats": [
+      "Level (New)",
       "Level",
       "Winstreak",
       "DuelHistory",
@@ -816,14 +1274,138 @@
       }
     ]
   };
-    
 
+const updatesData = [
+  {
+    date: "April 1, 2026 (7:38 AM CST)",
+    title: "Website Update – Changelog",
+    description: `➕ Added
+• EVIL APRIL FOOLS UPDATE MUHAHAHAHAHAAHAHAHAHAHAHAHHAHAHAHA!!!!
+• Oh yeah, added more icons and blah blah blah... who cares.
+• And also added the new dropbox download button, U will add the google drive download button in the next update, just wanted to get this out for april fools :)
+🔧 Changes
+• EVIL APRIL FOOLS UPDATE SDFKDSO FGLSODLG FSODLGSDOLFG!!!!
+🛠️ Fixed
+• Nothing.
+❌ Removed
+• Nothing.`
+  },
+  {
+    date: "March 27, 2026 (7:58 PM CST)",
+    title: "Website Update – Changelog",
+    description: `➕ Added
+• Added an Updates tab to show all the updates that have been made to the website in a changelog format, so you can stay up to date with all the new additions and changes to the website!
+• Added a way to search icons or categories in the search bar, so you can find what you're looking for faster!
+
+🔧 Changes
+• UI to Icons, RBXLs, PSDs, and Tutorials have been given a new glassmorphism design, giving it a more modern and sleek look.
+• Moved Level (New) from Labels to Stats category in PSDs.
+• Animations for hovering on icon, RBXL, PSD, and tutorial cards has been changed. They scale up more and have a new drop shadow to make it more noticeable.
+• Animations for opening popups, such as clicking on icon cards, have been changed with a slide in and fade in effect with a dark vignette background to make it more visually appealing.
+• Small changes have been made on the Home tab, such as adjusting the text position.
+• Made "Support" tab name to "Discord"
+🛠️ Fixed
+• Nothing.
+❌ Removed
+• Nothing.`
+  },
+  {
+    date: "March 14, 2026 (10:09 PM CST)",
+    title: "Website Update – Changelog",
+    description: `➕ Added
+• Added the new Level icon
+• Added the new RBXLs and a new PSD for the new level icon
+🔧 Changes
+• UI to the popup has been changed, adding gradients and some extra animations.
+• Changed mobile device UI. Most should fit on devices now. Next update, I will make tutorials fit, I just want to push it out to yall :)
+• Instead of text not being visible, it will display three dots until you click on it and actually see the title on the popup.
+• Now when hovering over the download button on the popup, it will have a blue outer glow.
+• Changed the README.md file on the website github for a more professional perspective.
+🛠️ Fixed
+• Nothing.
+❌ Removed
+• Nothing.`
+  },
+  {
+    date: "March 13, 2026 (10:37 AM CST)",
+    title: "Website Update – Changelog",
+    description: `➕ Added
+• New <b>Currencies</b> category (ex: Key, Glory)
+• New <b>Bundles</b> category for the Season Pass
+• You can now <b>search category names</b>, not just icons
+• Added a <b>beta notice</b> on the homepage
+• Icons now have <b>box shadows and a hover float effect</b>
+• Discord invite now <b>opens in a new tab</b>
+🔧 Changes
+• Moved <b>Key</b> from Interface to the new <b>Currencies</b> category
+🛠️ Fixed
+• Fixed an issue where <b>typing too fast</b> would hide icons
+• Fixed a bug where <b>popups would disappear</b> incorrectly
+❌ Removed
+• Nothing.`
+  },
+  {
+    date: "March 11, 2026 (1:49 PM CST)",
+    title: "Website Update – Changelog",
+    description: `➕ Added
+    • Added a meta image so it would display in embeds
+    • Added a last updated text on the home page
+    • You can now press slash in icons to open the icons search bar
+    • You can now press esc on an icon popup to close it
+    • You can now press tab to navigate across different tabs
+    🔧 Changes
+    • Nothing.
+    🛠️ Fixed
+    • Nothing.
+    ❌ Removed
+    • Nothing.`
+  },
+  {
+    date: "March 10, 2026 (3:35 PM CST)",
+    title: "Website Update – Changelog",
+    description: `➕ Added
+    • Added profile pictures for the person who uploaded the tutorial in Tutorials tab
+    • Added a search bar in the Icons tab
+    • Added the Gold ranks (not sure how I forgot that...)
+    • Added the new Unranked symbol
+    • Created a separate section for Rivals Logos
+    • Added a text in Home that says "website created by zay" so people know I made the website
+    • Added the new PSDs from the server
+    🔧 Changes
+    • Nothing.
+    🛠️ Fixed
+    • Nothing.
+    ❌ Removed
+    • Nothing.`
+  },
+  {
+    date: "March 9, 2026 (3:25 PM CST)",
+    title: "Website Update – Changelog",
+    description: `➕ Added
+    • Added a text saying that I made the website
+    • Added a tab for GFX Tutorials
+    • Added a new slide animation for every tab
+    • Mobile devices have more support, so most should fit now (still working on it)
+    🔧 Changes
+    • Nothing.
+    🛠️ Fixed
+    • Nothing.
+    ❌ Removed
+    • Nothing.`
+  }
+];
+    
   let iconsLoaded = false;
   let rbxlLoaded = false;
   let psdLoaded = false;
   let tutorialsLoaded = false;
+  let updatesLoaded = false;
+
+  let searchMode = localStorage.getItem("searchMode") || "icons";
 
   function showTab(tabId, button) {
+    closePopup();
+
     document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
     document.getElementById(tabId).classList.add('active');
 
@@ -852,6 +1434,11 @@
       generateTutorials();
       tutorialsLoaded = true;
     }
+
+    if (tabId === "updates" && !updatesLoaded) {
+      generateUpdates(updatesData);
+      updatesLoaded = true;
+    }
   }
 
   function generateIcons() {
@@ -869,13 +1456,29 @@
       iconsData[category].forEach(iconName => {
         const card = document.createElement("div");
         card.className = "icon-card";
-        card.onclick = () => openPopup(`Icons/${iconName}.png`, formatLabel(iconName));
 
-        card.innerHTML = `
-          <img src="Icons/${iconName}.png" loading="lazy">
-          <p>${formatLabel(iconName)}</p>
-        `;
+        const webpPath = `Icons/${iconName}.webp`;
+        const pngPath = `Icons/${iconName}.png`;
 
+        const img = document.createElement("img");
+        img.loading = "lazy";
+        img.src = webpPath;
+
+        // fallback to png if webp fails
+        img.onerror = () => {
+          img.src = pngPath;
+        };
+
+        card.onclick = () => {
+          const finalSrc = img.src.includes(".webp") ? webpPath : pngPath;
+          openPopup(finalSrc, formatLabel(iconName));
+        };
+
+        const label = document.createElement("p");
+        label.textContent = formatLabel(iconName);
+
+        card.appendChild(img);
+        card.appendChild(label);
         grid.appendChild(card);
       });
 
@@ -898,10 +1501,21 @@
     rbxlData[section].forEach(file => {
       const card = document.createElement("div");
       card.className = "icon-card";
-      card.onclick = () => openPopup(file.url, file.title, "RBXL.png");
+      card.onclick = () => {
+        openPopup(
+          file.url || file.dropbox,
+          file.title,
+          "RBXL_aprilfools.png",
+          {
+            type: "rbxl",
+            url: file.url,
+            dropbox: file.dropbox
+          }
+        );
+      };
 
       card.innerHTML = `
-        <img src="RBXL.png" loading="lazy">
+        <img src="RBXL_aprilfools.png" loading="lazy">
         <p>${file.title}</p>
       `;
 
@@ -913,33 +1527,33 @@
 }
 
   function generatePSDs() {
-  const container = document.getElementById("psd-container");
-  container.innerHTML = "";
+    const container = document.getElementById("psd-container");
+    container.innerHTML = "";
 
-  Object.keys(psdData).forEach(section => {
-    const title = document.createElement("h2");
-    title.textContent = section;
-    container.appendChild(title);
+    Object.keys(psdData).forEach(section => {
+      const title = document.createElement("h2");
+      title.textContent = section;
+      container.appendChild(title);
 
-    const grid = document.createElement("div");
-    grid.className = "icons-grid";
+      const grid = document.createElement("div");
+      grid.className = "icons-grid";
 
-    psdData[section].forEach(name => {
-      const card = document.createElement("div");
-      card.className = "icon-card";
-      card.onclick = () => openPopup(`PSDs/${name}.psd`, name, "PSD.png");
+      psdData[section].forEach(name => {
+        const card = document.createElement("div");
+        card.className = "icon-card";
+        card.onclick = () => openPopup(`PSDs/${name}.psd`, name, "PSD_aprilfools.png");
 
-      card.innerHTML = `
-        <img src="PSD.png" loading="lazy">
-        <p>${name.replace(" (Editable)", "")}</p>
-      `;
+        card.innerHTML = `
+          <img src="PSD_aprilfools.png" loading="lazy">
+          <p>${name.replace(" (Editable)", "")}</p>
+        `;
 
-      grid.appendChild(card);
+        grid.appendChild(card);
+      });
+
+      container.appendChild(grid);
     });
-
-    container.appendChild(grid);
-  });
-}
+  }
 
   function formatLabel(name) {
     return name
@@ -947,31 +1561,61 @@
       .trim();
   }
 
-  function openPopup(fileSrc, altText = "Asset Preview", previewSrc = null) {
+  function openPopup(fileSrc, altText = "Asset Preview", previewSrc = null, extra = {}) {
     const overlay = document.getElementById('popup-overlay');
     const popupImage = document.getElementById('popup-image');
     const popupLabel = document.getElementById('popup-label');
 
-    popupImage.onerror = () => {
-      popupImage.style.display = "none";
-    };
+    const downloadBtn = document.getElementById("download-btn");
+    const dropboxBtn = document.getElementById("dropbox-btn");
+    const gdriveBtn = document.getElementById("gdrive-btn");
+
+    overlay.classList.remove("closing");
 
     popupImage.dataset.fileSrc = fileSrc;
     popupLabel.textContent = altText;
 
-    if (previewSrc) {
-      popupImage.src = previewSrc;
-      popupImage.style.display = "block";
-    } else {
-      popupImage.src = fileSrc;
-      popupImage.style.display = "block";
+    downloadBtn.style.display = "inline-block";
+    dropboxBtn.style.display = "none";
+    gdriveBtn.style.display = "none";
+
+    if (extra.type === "rbxl") {
+      if (extra.dropbox) {
+        dropboxBtn.style.display = "inline-block";
+        dropboxBtn.dataset.url = extra.dropbox;
+        downloadBtn.style.display = "none";
+      }
+
+      if (extra.drive) {
+        gdriveBtn.style.display = "inline-block";
+        gdriveBtn.dataset.url = extra.drive;
+        downloadBtn.style.display = "none";
+      }
     }
+
+    popupImage.src = previewSrc || fileSrc;
+    popupImage.style.display = "block";
 
     overlay.classList.add('active');
   }
 
   function closePopup() {
-    document.getElementById('popup-overlay').classList.remove('active');
+    const overlay = document.getElementById('popup-overlay');
+
+    overlay.classList.add("closing");
+
+    overlay.classList.remove("active");
+    overlay.classList.remove("closing");
+  }
+
+  function openDropbox() {
+    const url = document.getElementById("dropbox-btn").dataset.url;
+    window.open(url, "_blank");
+  }
+
+  function openDrive() {
+    const url = document.getElementById("gdrive-btn").dataset.url;
+    window.open(url, "_blank");
   }
 
   function downloadImage() {
@@ -1045,35 +1689,47 @@
       const grid = title.nextElementSibling;
       const cards = grid.querySelectorAll(".icon-card");
 
-      let categoryMatches = 0;
+      const categoryName = title.textContent.toLowerCase();
 
-      cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
+      if (searchMode === "icons") {
+        let categoryMatches = 0;
 
-        if (text.includes(query)) {
-          card.style.display = "flex";
+        cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
 
-          requestAnimationFrame(() => {
+          if (text.includes(query)) {
+            card.style.display = "flex";
+            card.classList.remove("hidden");
+            categoryMatches++;
+            totalMatches++;
+          } else {
+            card.style.display = "none";
+          }
+        });
+        if (categoryMatches > 0) {
+          title.style.display = "block";
+          grid.style.display = "grid";
+        } else {
+          title.style.display = "none";
+          grid.style.display = "none";
+        }
+      }
+
+      if (searchMode === "categories") {
+        if (categoryName.includes(query)) {
+          title.style.display = "block";
+          grid.style.display = "grid";
+
+          cards.forEach(card => {
+            card.style.display = "flex";
             card.classList.remove("hidden");
           });
 
-          categoryMatches++;
           totalMatches++;
         } else {
-          card.classList.add("hidden");
-
-          setTimeout(() => {
-            card.style.display = "none";
-          }, 200);
+          title.style.display = "none";
+          grid.style.display = "none";
         }
-      });
-
-      if (categoryMatches === 0) {
-        title.style.display = "none";
-        grid.style.display = "none";
-      } else {
-        title.style.display = "block";
-        grid.style.display = "grid";
       }
     });
 
@@ -1105,6 +1761,160 @@
       searchInput.focus();
     }
   });
+
+  async function updateLastModifiedRelative() { 
+    const repoOwner = 'squidward5';
+    const repoName = 'Roblox-Rivals-Assets';
+    const filePath = 'index.html';
+
+    try {
+      const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/commits?path=${filePath}&page=1&per_page=1`);
+      const data = await response.json();
+
+      if (data && data[0]) {
+        const commitDate = new Date(data[0].commit.committer.date);
+        document.getElementById('last-updated').textContent = `Last updated: ${timeAgo(commitDate)}`;
+      }
+    } catch (err) {
+      console.error("Could not fetch last updated date", err);
+    }
+  }
+
+  function timeAgo(date) {
+    const now = new Date();
+    const seconds = Math.floor((now - date) / 1000);
+
+    const intervals = [
+      { label: 'y', seconds: 31536000 },
+      { label: 'mo', seconds: 2592000 },
+      { label: 'd', seconds: 86400 },
+      { label: 'h', seconds: 3600 },
+      { label: 'm', seconds: 60 },
+      { label: 's', seconds: 1 }
+    ];
+
+    for (const interval of intervals) {
+      const count = Math.floor(seconds / interval.seconds);
+      if (count >= 1) {
+        return `${count}${interval.label} ago`;
+      }
+    }
+    return 'just now';
+  }
+
+  updateLastModifiedRelative();
+
+function generateUpdates(updatesData) {
+  const updatesContainer = document.getElementById('updates-container');
+    if (!updatesContainer) return;
+    updatesContainer.innerHTML = '';
+
+    const createSection = (title, lines, themeClass) => {
+    if (!lines || lines.length === 0) return '';
+    
+    const emojis = {
+      'Added': '➕',
+      'Changes': '🔧',
+      'Fixed': '🛠️',
+      'Removed': '❌'
+    };
+
+    return `
+      <h4 class="${themeClass}">
+        <span style="margin-right: 8px;">${emojis[title]}</span>${title}
+      </h4>
+      <ul>
+        ${lines.map(line => `<li>${line.trim()}</li>`).join('')}
+      </ul>
+    `;
+  };
+
+  updatesData.forEach(update => {
+    const added = getSectionLines(update.description, '➕ Added');
+    const changes = getSectionLines(update.description, '🔧 Changes');
+    const fixed = getSectionLines(update.description, '🛠️ Fixed');
+    const removed = getSectionLines(update.description, '❌ Removed');
+
+    const card = document.createElement('div');
+    card.className = 'update-card';
+
+    card.innerHTML = `
+      <div class="update-card-header" style="display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 15px 20px;">
+        <div class="date-header" style="margin: 0; padding: 0; border: none; font-weight: bold; color: #dbdee1;">
+          <span style="margin-right: 5px;">📢</span>${update.date}
+        </div>
+        <div class="author-tag" style="font-size: 0.9rem; color: #b5bac1;">
+          <span style="font-weight: bold; color: white;">zay</span> — Web Developer
+        </div>
+      <div style="padding: 20px;">
+        <h3 class="title-text">${update.title}</h3>
+        <div class="update-description">
+          ${createSection('Added', added, 'add-text')}
+          ${createSection('Changes', changes, 'change-text')}
+          ${createSection('Fixed', fixed, 'fix-text')}
+          ${createSection('Removed', removed, 'remove-text')}
+        </div>
+      </div>
+    `;
+    updatesContainer.appendChild(card);
+  });
+}
+
+function getSectionLines(text, sectionHeader) {
+  if (!text.includes(sectionHeader)) return [];
+  
+  const sections = text.split(/(?=➕|🔧|🛠️|❌)/); 
+  const targetSection = sections.find(s => s.includes(sectionHeader));
+  
+  if (!targetSection) return [];
+  return targetSection
+    .split('\n')
+    .slice(1) 
+    .map(line => line.replace(/[•\s]+/, '').trim())
+    .filter(line => line.length > 0);
+}
+
+const iconModeBtn = document.getElementById("icon-mode");
+const categoryModeBtn = document.getElementById("category-mode");
+
+iconModeBtn.addEventListener("click", () => {
+  searchMode = "icons";
+  iconModeBtn.classList.add("active");
+  categoryModeBtn.classList.remove("active");
+
+  searchInput.placeholder = "Search icons...";
+
+  searchIcons();
+});
+
+categoryModeBtn.addEventListener("click", () => {
+  searchMode = "categories";
+  categoryModeBtn.classList.add("active");
+  iconModeBtn.classList.remove("active");
+
+  searchInput.placeholder = "Search categories...";
+
+  searchIcons();
+});
+
+function applySavedSearchMode() {
+  if (searchMode === "categories") {
+    categoryModeBtn.classList.add("active");
+    iconModeBtn.classList.remove("active");
+    searchInput.placeholder = "Search categories...";
+  } else {
+    iconModeBtn.classList.add("active");
+    categoryModeBtn.classList.remove("active");
+    searchInput.placeholder = "Search icons...";
+  }
+}
+
+applySavedSearchMode();
+
+window.addEventListener("beforeunload", () => {
+  localStorage.setItem("searchMode", searchMode);
+});
 </script>
 </body>
 </html>
+

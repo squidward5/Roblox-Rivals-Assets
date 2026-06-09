@@ -13,7 +13,7 @@
   <meta property="og:image:width" content="1024">
   <meta property="og:image:height" content="1024">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- discord sometimes uses reads twitter before og so ill use this aswell - zay (3/11/2026) -->
+  <!-- discord sometimes reads twitter before og so ill use this aswell - zay (3/11/2026) -->
   <meta name="twitter:title" content="Roblox Rivals Assets">
   <meta name="twitter:description" content="Free Roblox Rivals Assets - Icons, RBXL files, PSDs, and more!">
   <meta name="twitter:image" content="https://squidward5.github.io/Roblox-Rivals-Assets/RRA.png?v=2">
@@ -23,7 +23,6 @@
   <title>Roblox Rivals Assets</title>
   <link rel="icon" type="image/x-icon" href="https://squidward5.github.io/Roblox-Rivals-Assets/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
-  <script src="https://www.youtube.com/iframe_api"></script>
 
   <style>
     * {
@@ -355,30 +354,35 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at center, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.65));
       display: flex;
       justify-content: center;
       align-items: center;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.25s ease, backdrop-filter 0.25s ease;
-      z-index: 9999;
+      background: rgba(0, 0, 0, 0);
       backdrop-filter: blur(0px);
+      transition: opacity 0.25s ease, background-color 0.25s ease, backdrop-filter 0.25s ease;
+      z-index: 9999;
     }
+
 
     #popup-overlay.active {
       opacity: 1;
       pointer-events: auto;
+      background: rgba(0, 0, 0, 0.45);
       backdrop-filter: blur(6px);
     }
 
     .popup-box {
-      background: linear-gradient(to top, rgba(6, 6, 6, 0.75), rgba(20, 20, 20, 0.75));
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(12px);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
       width: 90%;
       max-width: 400px;
       max-height: 80vh;
       padding: 20px;
-      border-radius: 15px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1002,7 +1006,6 @@
     .underline-link {
       position: relative;
       display: inline-block;
-      color: #3ddbff;
       font-weight: bold;
       text-decoration: none;
     }
@@ -1014,13 +1017,63 @@
       bottom: 4px;
       height: 2px;
       width: 0%;
-      background: linear-gradient(to right, #ff0000, #ff0000);
+      background-color: #3ddbff;
       border-radius: 2px;
-      transition: width 0.25s ease;
+      transition: width 0.3s ease;
     }
 
     .underline-link:hover::after {
       width: 100%;
+    }
+
+    .underline-link2 {
+      position: relative;
+      display: inline-block;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .underline-link2::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 12px;
+      height: 2px;
+      width: 100%;
+      background-color: #3ddbff;
+      border-radius: 2px;
+      transform: translateX(-50%) scaleX(0);
+      transform-origin: center;
+      transition: transform 0.4s ease;
+    }
+
+    .underline-link2.animate::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+
+    .underline-link3 {
+      position: relative;
+      display: inline-block;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .underline-link3::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 2px;
+      height: 2px;
+      width: 100%;
+      background-color: #3ddbff;
+      border-radius: 2px;
+      transform: translateX(-50%) scaleX(0);
+      transform-origin: center;
+      transition: transform 0.4s ease;
+    }
+
+    .underline-link3.animate::after {
+      transform: translateX(-50%) scaleX(1);
     }
 
     @media (max-width: 480px) {
@@ -1068,6 +1121,168 @@
         margin-right: 5px;
       }
     }
+
+    .channel-name {
+      position: absolute;
+      top: -2.5px;
+      left: 45px;
+      z-index: 6;
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-shadow: 0 2px 6px rgb(0,0,0);
+      white-space: nowrap;
+    }
+
+    .tutorial-info {
+      padding: 12px;
+      text-align: left;
+    }
+
+    .video-title {
+      font-size: 0.9rem;
+      color: white;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .video-title {
+      white-space: normal;
+      overflow: visible;
+      text-overflow: unset;
+      word-break: break-word;
+    }
+
+    .button {
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: white;
+      padding: 14px 26px;
+      border-radius: 15px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      margin-top: 25px;
+    }
+
+    .button:hover {
+      transform: translateY(-5px) scale(1.03);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    .button:active {
+      transform: scale(0.96);
+    }
+
+    .creators-section {
+      text-align: center;
+    }
+
+    .creators-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .creators-marquee {
+      width: 100%;
+      position: relative;
+    }
+
+    .creators-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      animation: scrollCreators 50s linear infinite;
+    }
+
+    .creator-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 12px;
+      width: 200px;
+      max-width: 202px;
+      backdrop-filter: blur(8px);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      height: 235px;
+      flex-shrink: 0;
+      margin: 0;
+    }
+
+    .creator-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .creator-card img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      object-fit: cover;
+    }
+
+    .creator-card h4 {
+      margin: 0;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .creator-card p {
+      margin: 6px 0 -2px;
+      color: #ff4d4d;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .creator-card span {
+      color: #cfcfcf;
+      font-size: 0.9rem;
+    }
+
+    @keyframes scrollCreators {
+      0% {
+        transform: translateX(0);
+        opacity: 0;
+      }
+
+      2% {
+        opacity: 1;
+      }
+
+      45% {
+        opacity: 1;
+      }
+
+      98% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateX(-50%);
+        opacity: 0;
+      }
+    }
+
+    .favorite-quote {
+      color: #00cfff;
+      font-style: italic;
+      margin-top: 8px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+    }
+
+    #marquee-title {
+      margin-top: 0px;
+    }
   </style>
 </head>
 
@@ -1079,11 +1294,11 @@
         <div class="logo">Roblox Rivals Assets</div>
       </div>
       <nav>
-        <button aria-label="Go to Home tab" type="button" onclick="showTab('home', this)"
-          class="active-tab">Home</button>
+        <button aria-label="Go to Home tab" type="button" onclick="showTab('home', this)" class="active-tab">Home</button>
         <button aria-label="Go to Icons tab" type="button" onclick="showTab('icons', this)">Icons</button>
         <button aria-label="Go to RBXLs tab" type="button" onclick="showTab('rbxls', this)">RBXLs</button>
         <button aria-label="Go to PSDs tab" type="button" onclick="showTab('psds', this)">PSDs</button>
+        <button aria-label="Go to Sounds tab" type="button" onclick="showTab('sfx', this)">Sounds</button>
         <button aria-label="Go to Tutorials tab" type="button" onclick="showTab('tutorials', this)">Tutorials</button>
         <button aria-label="Go to Updates tab" type="button" onclick="showTab('updates', this)">Updates</button>
         <button aria-label="Go to Discord tab" type="button" onclick="showTab('discord', this)">Discord</button>
@@ -1092,8 +1307,8 @@
   </header>
 
   <section id="home" class="tab active">
-    <h2 style="margin-bottom: -10px;">Welcome to</h2>
-    <h1>Roblox Rivals Assets</h1>
+    <h2 style="margin-bottom: -10px;" class="underline-link3">Welcome to</h2>
+    <h1 class="underline-link2">Roblox Rivals Assets</h1>
     <p style="margin-bottom: 25px;">Your one-stop shop for free Roblox Rivals assets. Find icons, RBXL files, PSDs, and
       tutorials to help you create amazing Roblox Rivals content.</p>
     <div class="video-container">
@@ -1102,13 +1317,322 @@
         allowfullscreen>
       </iframe>
     </div>
-    <p>Website created by <a href="https://github.com/squidward5" target="_blank" rel="noopener noreferrer"
-        class="underline-link">zay</a></p>
+    <p>Website created by <a href="https://github.com/squidward5" target="_blank" rel="noopener noreferrer" class="underline-link">zay</a></p>
     <p id="last-updated" style="text-align:center; margin-top:-10px; color: #cfcfcf;"></p>
-    <p style="text-align:center; margin-top:-10px; color: #cfcfcf;">This site is still in beta. Please report any bugs
-      in our <a href="https://discord.gg/RgKWASPUGU" target="_blank" rel="noopener noreferrer"
-        class="underline-link">Discord server</a>.</p>
-  </section>
+    <p style="text-align:center; margin-top:-10px; color: #cfcfcf;">Found a bug or have a suggestion? Let us know in our <a href="https://discord.gg/RgKWASPUGU" target="_blank" rel="noopener noreferrer" class="underline-link">Discord server</a>.</p>
+    
+    <div class="creators-section">
+      <h2 id="marquee-title">Used by thousands of RIVALS creators</h2>
+
+      <div class="creators-marquee">
+        <div class="creators-track">
+          <a href="https://www.youtube.com/@StrawBerrieCreates" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/dy2Kf42SjVjVSWEtMzQfUYBFWFeKChtfW8gluIOx5IFUbMrXthP4QoVj0RALtySd8GXwP8POvQ=s160-c-k-c0x00ffffff-no-rj" alt="StrawBerrie">
+              <h4>StrawBerrie</h4>
+              <h5 class="favorite-quote">"RRA is the #1 place I get my rivals assets!"</h5>
+              <p>19.7K subscribers</p>
+              <span>562,090 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@ActuallyClix" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/1hH2kOsSFwrIaYGsky2G4ZPmM_pLMt5L6pJsgZNDQHP6ilfhTFUoOrw4DISdVsVdegvseQJi6w=s160-c-k-c0x00ffffff-no-rj" alt="Clix">
+              <h4>Clix</h4>
+              <p>59.1K subscribers</p>
+              <span>24,829,793 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@Zentiell" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/ONwCANV3aHL6EmITj-rwZlk5CXKwk_MeXfP2KbFZD0Mz4VWi1n4XY3e9nqzv78Zi7XBzELvE=s160-c-k-c0x00ffffff-no-rj" alt="Zentiel">
+              <h4>Zentiel</h4>
+              <h5 class="favorite-quote">"Best Rivals Assets!"</h5>
+              <p>8.59K subscribers</p>
+              <span>3,026,356 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@MangyBlox" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/9zHOh95-u6z35rl5ilDgs2wfo-_EJj03iIsLspGfL6IBiksQuZg9_zGToDgmxSCUvWtXiHFDvRk=s160-c-k-c0x00ffffff-no-rj" alt="MangyBlox">
+              <h4>MangyBlox</h4>
+              <h5 class="favorite-quote">"Very useful assets. Helped me several times!"</h5>
+              <p>66.5K subscribers</p>
+              <span>9,660,635 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@SubToKaiM" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/he83_csfdu-gufbECBvdaHGBhcvCQabFbRxObjpzVBMUFqf2LbdV9wawCEaQx1iFwbhYkRf29Q=s160-c-k-c0x00ffffff-no-rj" alt="KaiM">
+              <h4>KaiM</h4>
+              <p>288K subscribers</p>
+              <span>37,231,455 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@3attle" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/G3aQAxz1YwB1-_ttcLeNHNRa13OfAxa4P77aFFBM8xRP0b_UPVVZZC_1pY278HxgXj_wM4Y0Az4=s160-c-k-c0x00ffffff-no-rj" alt="Ceattle">
+              <h4>Ceattle</h4>
+              <p>73.4K subscribers</p>
+              <span>8,545,821 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@KashyKans" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/s4alJzdpSZ-iZ3n4m-daL8NySxIB2cSMjxY8f00kfW6gNxG1TUlLY9eIquY7DPTusskhKqmF=s160-c-k-c0x00ffffff-no-rj" alt="Kashy Kans">
+              <h4>Kashy Kans</h4>
+              <p>323K subscribers</p>
+              <span>278,515,869 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@oPixell" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/8JQGIKcoRYLjj7Hidp-Zykez2n44p5X3td_d5J-xAop70zih4vdKFxtRanaSa7OG98iNMOCtuw=s160-c-k-c0x00ffffff-no-rj" alt="oPixel">
+              <h4>oPixel</h4>
+              <p>39.5K subscribers</p>
+              <span>5,875,811 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@techplayzthis2" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/9urEoQ154VMHJVuatj2xammPLqvcdDd_eSOzbnyNFr9ynniAucCVj9JwMs1J-Wh6PO78XFd77G0=s160-c-k-c0x00ffffff-no-rj" alt="Tech">
+              <h4>Tech</h4>
+              <h5 class="favorite-quote">"Best website for you to start your journey as a cc, thumbnail maker or more."</h5>
+              <p>2.33K subscribers</p>
+              <span>116,598 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@Fantix" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/bCCqwy2hrXCMrdlYheagiVmAlSgMbe_Ge1R9RAuPUwQ6aSI_kyYnHYLa95OHQ-eJWmBN1hMf=s160-c-k-c0x00ffffff-no-rj" alt="Fantix">
+              <h4>Fantix</h4>
+               
+              <p>148K subscribers</p>
+              <span>19,976,015 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@MuzzyRBLX" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/6fZTwlV6U7_r1APTiM-pAbRI-ualhRfE9tuLBXd9FURcB6oTZTeZFdJsG5fsuhzrfkGQd_1Z=s160-c-k-c0x00ffffff-no-rj" alt="Muzzy">
+              <h4>Muzzy</h4>
+              <p>21.1K subscribers</p>
+              <span>2,916,598 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@airslegacy" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/tKfTO7OSMKjZGxmUhX6ZgUv7HoQ7Azvi5fr260VEaqcxaJaQMBWAjsvqQm_luqN9Qotbed3c=s160-c-k-c0x00ffffff-no-rj" alt="Air">
+              <h4>Air</h4>
+              <p>50K subscribers</p>
+              <span>10,875,805 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@beastplaysgaming" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/CDhTZZ93qNcnEmQkBK8laU7CLKOOMJ_MMgfJKtjWkxe9oDS77r4YFf16dd_M2EvFUhi322YV=s160-c-k-c0x00ffffff-no-rj" alt="BeastPlays">
+              <h4>BeastPlays</h4>
+              <p>17.2K subscribers</p>
+              <span>5,227,459 views</span>
+            </div>
+          </a>
+        
+          <a href="https://www.youtube.com/@yleezy" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/1RPSJhENkmiEiAt7pxaJ3rlfXXNZZAKy7pVAurukEfA_e6-2-7b4z03j4uORy_G3F7vo814PJs8=s160-c-k-c0x00ffffff-no-rj" alt="yleezy">
+              <h4>yleezy</h4>
+              <p>11.6K subscribers</p>
+              <span>582,105 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@SubToIced" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/OFQSsyvYssFkeDSrntoGdlmi-RCQBCdbMK8oXXwKMdJul8mYdou6n92v5BkINgtx-0AoYVtvug=s160-c-k-c0x00ffffff-no-rj" alt="Iced">
+              <h4>Iced</h4>
+              <p>22.2K subscribers</p>
+              <span>2,381,720 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@riseofbandit" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/AIHxifz84UlD11oRt7flxrdzXnKbZhKSf4r3oNuPXj9kcm7bbkTgIs9uE0GNX7F8Nb6gIDEcEw=s160-c-k-c0x00ffffff-no-rj" alt="Banditt">
+              <h4>Banditt</h4>
+              <p>3.53K subscribers</p>
+              <span>213,153 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@TheAtticGames" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/O2BN9qWDkUgrNAXD95keqCyngkEPDcxw7dLVxkqq_8UsSyNnQXuX-FlvVIc05UKnR7WNwnLVfss=s160-c-k-c0x00ffffff-no-rj" alt="Attic">
+              <h4>Attic</h4>
+              <h5 class="favorite-quote">"RRA is the fastest, best, and most reliable source to get rivals assets!"</h5>
+              <p>22.7K subscribers</p>
+              <span>2,351,074 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@par-blox" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/Qid3W0bdNV0csLooGmzq8lJDiue3PQtj0vasbQV6PxYymyvXC3wrIG_C-JYkxyY5XhOURMVSahs=s160-c-k-c0x00ffffff-no-rj" alt="ParBlox">
+              <h4>ParBlox</h4>
+              <p>135K subscribers</p>
+              <span>17,592,089 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@TrooperRivals" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/cQbOrcsYiH10P5arslHwe-kggHjvhbJVFMEQ07KpGcCvoIzcMmeklYDyOc0pjopBsknMO0rPwk8=s160-c-k-c0x00ffffff-no-rj" alt="Trooper">
+              <h4>Trooper</h4>
+              <p>10.5K subscribers</p>
+              <span>869,994 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@HasForTown" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/ngSKRdB9HZIZnnxx24eDkWufW54nzDgKLsKMvJ3GkmF_xuYUyxPXCQaglO0m2p_nYK7VP5uh3f0=s160-c-k-c0x00ffffff-no-rj" alt="HasForTown">
+              <h4>HasForTown</h4>
+              <p>63.7K subscribers</p>
+              <span>29,843,138 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@PrismaticRBX" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/Vn_m0CcFqJhH8Kp6CH9_KiACr9WJ1HHOzCvqao1-ubkWi65Lo62A4Exx0BYo6GaOd_HyOGAqIOs=s160-c-k-c0x00ffffff-no-rj" alt="Prismatic">
+              <h4>Prismatic</h4>
+              <h5 class="favorite-quote">"RRA helped me 2x my views and has boosted my YouTube career!"</h5>
+              <p>5.14K subscribers</p>
+              <span>89,952 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@CraftysClan" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/VtAf1m7G_z00t_BA6y68HlWKb3o8t_DWhDah9hM22gq7zPH_0d0Ct8c5uksk1G9GqUembvdY=s160-c-k-c0x00ffffff-no-rj" alt="CraftyBlox">
+              <h4>CraftyBlox</h4>
+              <h5 class="favorite-quote">"never bring a rocket to a sniper fight"</h5>
+              <p>5.09K subscribers</p>
+              <span>213,010 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@JentzPlay小健" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/J1SBSm6c24zFeht9Dhq2j5_v0-2lkacZQTAiPLIly3j8_RxIAnLa5taTOU7gJOk2naFD45B-mA=s160-c-k-c0x00ffffff-no-rj" alt="JentzPlay小健">
+              <h4>JentzPlay小健</h4>
+              <h5 class="favorite-quote">"You are not late, you are on time"</h5>
+              <p>71.1K subscribers</p>
+              <span>10,234,290 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@SubTwoHorrid" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/x0vUFX9p9Uf1izqIsLSnFMc8t0v9yZfBaiKEuvPiL35CvA16McRKDpSokLBgRUdQkmNIdqJtNA=s160-c-k-c0x00ffffff-no-rj" alt="horrid">
+              <h4>horrid</h4>
+              <h5 class="favorite-quote" style="font-size: 12px;">"wish i knew about this website earlier, really helpful in many scenarios!"</h5>
+              <p>2.11K subscribers</p>
+              <span>82,618 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@SillySidds" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/41KfLLeW5jhqP7RNcF3zBvE0TFkhEURT2oVpT6ewF2PBxN_wzKL5qVu0ntET6mlJEAddQ8F_EQ=s160-c-k-c0x00ffffff-no-rj" alt="SillySidds">
+              <h4>SillySidds</h4>
+              <h5 class="favorite-quote">"Hard Work Is Always Key"</h5>
+              <p>17.5K subscribers</p>
+              <span>3,350,038 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@火焰耀西" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/i0TS5v_oVuXZ0BuPj0DlC67U7DZUidQGGSSQB6TtpwpCE2b6WmfDUoTLdkZCmlM0RXw6qEOOWg=s160-c-k-c0x00ffffff-no-rj" alt="火焰耀西Flame Yoshi">
+              <h4>火焰耀西Flame Yoshi</h4>
+              <p>18K subscribers</p>
+              <span>671,839 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@SubToPenguincat" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/rf_Cjm1W5t6vivX9JcmtzsqLB8YWWionKUnylKUYDYnw5hyK-AIjm3Xp2dopNWJhfwq1V2RH=s160-c-k-c0x00ffffff-no-rj" alt="Penguincat">
+              <h4>Penguincat</h4>
+              <h5 class="favorite-quote">"hello there"</h5>
+              <p>4.98K subscribers</p>
+              <span>105,283 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@DereBlox" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/8up4LZZLN7mWfq8o27IhIlUfe2RPiR598jhukevpznPsUDoMnLIBa4hRN9oVgIBqzaOlXr9S=s160-c-k-c0x00ffffff-no-rj" alt="DereBlox">
+              <h4>DereBlox</h4>
+              <h5 class="favorite-quote">"Thanks to this website, my videos have over 400,000 views 👀"</h5>
+              <p>61.9K subscribers</p>
+              <span>7,021,949 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@DubRgames" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/tiUvscthU9Kwhguigb0RfJ3FdsUKJp0G5T0wYJGIwWMkeAUy8gup89AO_aKu0IwMSdkiWlcDNA=s160-c-k-c0x00ffffff-no-rj" alt="DubR">
+              <h4>DubR</h4>
+              <p>17.6K subscribers</p>
+              <span>2,602,835 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@ACC3SS_ERROR" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/R1tsaqU6qBe9VspeKMEw-jsPztSuQKyiNzDPn2jg7t2UkhVqJRRfTpSpU1eYuwywZH_TxTS8XhQ=s160-c-k-c0x00ffffff-no-rj" alt="ACC3SS_ERROR">
+              <h4>ACC3SS_ERROR</h4>
+              <h5 class="favorite-quote">"this server helped me so much for looking for rivals assets, its goated"</h5>
+              <p>17.6K subscribers</p>
+              <span>2,602,835 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@burgeroce" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/6tr-yvaEZ915Cf6wgyqxQpz6pGcXlDeDBemJjbV_qzJDGqkbYJkv8_cKXIAKmW5OUPLPXB02=s160-c-k-c0x00ffffff-no-rj" alt="burger">
+              <h4>burger</h4>
+              <h5 class="favorite-quote">"helped me with so many assets so many times"</h5>
+              <p>3.6K subscribers</p>
+              <span>891,451 views</span>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@Lowcheee" target="_blank" rel="noopener noreferrer">
+            <div class="creator-card">
+              <img src="https://yt3.googleusercontent.com/PnkzivkC-hLLIFmi42P2tKTxIKWumlKXjJoMmLMCs8tDB1C-2eviMGroVl8i55U0ykuoTR3KIA=s160-c-k-c0x00ffffff-no-rj" alt="Lowchee">
+              <h4>Lowchee</h4>
+              <h5 class="favorite-quote" style="font-size:0.8rem;">"Don't wait for the perfect moment—take the moment and make it yours."</h5>
+              <p>42K subscribers</p>
+              <span>8,822,593 views</span>
+            </div>
+          </a>
+    </div>
+  </div>
+</div>
+</section>
 
   <section id="icons" class="tab">
     <div class="search-bar" id="icon-search-bar">
@@ -1124,9 +1648,12 @@
       </div>
     </div>
 
+    <button class="button" onclick="downloadAllIcons()">Download All Icons</button>
+
     <div class="content-container">
       <div id="icons-container"></div>
     </div>
+
     <p id="no-results" style="display:none; text-align:center; margin-top:40px; font-size:1.2rem;">Sorry, no results
       were found. :(</p>
   </section>
@@ -1137,6 +1664,11 @@
 
   <section id="psds" class="tab">
     <div id="psd-container"></div>
+  </section>
+
+  <section id="sfx" class="tab">
+    <div id="sfx-container"></div>
+    <p style="color: yellow;">⚠️ Still under construction. Come back soon! ⚠️</p>
   </section>
 
   <section id="discord" class="tab">
@@ -1162,38 +1694,45 @@
     <div class="popup-box" onclick="event.stopPropagation()">
       <div id="popup-label" style="font-size:1.6rem;font-weight:bold;color:#ffffff;"></div>
       <img id="popup-image" src="" alt="">
-      <div id="popup-buttons" style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+      <div id="popup-buttons" style="display:flex; flex-direction:column; align-items:center; gap:10px; width:100%;">
         <button id="download-btn" class="download-btn" onclick="downloadImage()">Download</button>
 
-        <button id="dropbox-btn" class="download-btn" style="display:none;" onclick="openDropbox()">Download
-          (Dropbox)</button>
-        <button id="gdrive-btn" class="download-btn" style="display:none;" onclick="openDrive()">Download (Google
-          Drive)</button>
+        <button id="dropbox-btn" class="download-btn" style="display:none;" onclick="openDropbox()">Download (Dropbox)</button>
+        <button id="gdrive-btn" class="download-btn" style="display:none;" onclick="openDrive()">Download (Google Drive)</button>
+        <button id="preview-btn" class="download-btn" style="display:none;" onclick="openPreview()">Preview Audio</button> <!-- for audio only -->
+
+        <audio id="audio-preview" controls style="display:none; width:100%; margin-top:10px;"></audio>
       </div>
     </div>
   </div>
 
   <script>
     const iconsData = {
-      Gameplay: ["Play", "Exit", "Leave", "Spawn", "Shoot", "Combat", "Punch", "Scythe", "Hammer", "Grenade", "Weapon", "Charm", "Wrap", "Wrap2", "Shuffle", "Bullet", "Loadout1", "Loadout2", "Explosion", "Scope", "Scoped", "Headshot", "Scope Star", "Noscope", "Blinded"],
-      Interface: ["Health", "Shield", "Indicator", "Warning", "Death", "Lock", "Unlocked", "Ban", "Gift", "DailyTasks", "Basket", "Mailbox", "Map"],
+      Gameplay: ["Play", "Exit", "Leave", "Spawn", "Shoot", "Combat", "Punch", "Scythe", "Hammer", "Grenade", "Weapon", "Duels", "Charm", "Wrap", "Wrap2", "Shuffle", "Bullet", "Loadout1", "Loadout2", "Explosion", "Scope", "Scoped", "Headshot", "Scope Star", "Noscope", "Blinded"],
+      Interface: ["Health", "Shield", "Indicator", "AudioVisualizer", "DamageVignette", "FrozenVignette", "Warning", "Death", "Lock", "Unlocked", "Ban", "Gift", "DailyTasks", "Basket", "Mailbox", "Map"],
       Profile: ["1v1", "Invite", "Close", "ViewProfile"],
       Rounds: ["RoundWon", "RoundLost", "RoundDraw"],
-      Achievements: ["Trophy", "RankedWins", "MVP", "Rewards", "Favorite", "Winstreak", "Level", "Level New", "Season Level"],
-      Menu: ["Arrow", "Back", "Search", "Category", "Checkmark", "Checkbox", "Restart", "Stopwatch", "Region", "Contract", "Trash", "Settings", "Streak Safety"],
-      Info: ["Ping", "Sound", "Video", "Camera"],
+      Achievements: ["Trophy", "RankedWins", "MVP", "Rewards", "Favorite", "Winstreak", "Level", "Level New", "Season Level", "TaskStreak"],
+      Menu: ["Arrow", "Back", "Search", "Category", "Checkmark", "Checkbox", "FavoritedBox", "Restart", "Stopwatch", "Region", "Contract", "Trash", "Settings", "Streak Safety"],
+      Info: ["Ping", "PlayerPing", "Sound", "Video", "Camera", "Edit", "EditUI", "EditColor"],
       Logo: ["Rivals", "Rivals Festive", "Rivals Halloween", "Rivals Flat", "Rivals Flat Inverted", "NG", "Nosniy", "Nosniy Inc", "Sensei", "Sensei & Co", "Sensei New", "Sensei Global"],
       Social: ["Player", "Spectate", "Spectate2", "Trade", "Emote"],
       Visual: ["PaintSplatter", "PaintSplatter2", "Terrain", "Wind"],
       System: ["Infinite", "Keybind", "Crosshair", "Arcade", "Boost", "Queue Pad"],
       Devices: ["Computer", "Computer (Filled)", "Controller", "Phone", "VR", "Devices"],
-      Currencies: ["Key", "Key2", "Key3", "Candy", "Crystal", "Glory", "Rarity", "Gift Ticket", "Skin Ticket"],
-      Bundles: ["Standard Bundle", "Prime Bundle", "Contraband Bundle", "Silver Bag", "Gold Bag", "Regular Battlepass", "Exclusive Battlepass", "Wing"],
+      Currencies: ["Key", "Key2", "Key3", "Candy", "Crystal", "CrystalFlat", "Glory", "GloryFlat", "Rarity", "Gift Ticket", "Skin Ticket"],
+      Battlepass: ["Standard Bundle", "Prime Bundle", "Contraband Bundle", "Silver Bag", "Gold Bag", "Regular Battlepass", "Exclusive Battlepass", "Wing"],
+      Bundles: ["Pixel Bundle", "Lovely Bundle", "Nostalgia Bundle", "Balloon Bundle", "Prop Bundle"],
+      Characters: ["00bandoboy", "Chicken"],
       Ranks: ["Unranked", "Unranked New", "Bronze1", "Bronze2", "Bronze3", "Silver1", "Silver2", "Silver3", "Gold1", "Gold2", "Gold3", "Platinum1", "Platinum2", "Platinum3", "Diamond1", "Diamond2", "Diamond3", "Onyx1", "Onyx2", "Onyx3", "Nemesis", "Archnemesis"]
     };
 
     const rbxlData = {
       "Latest Files": [
+        { title: "(RRA) Rivals Assets (contains Studio)", dropbox: "https://www.dropbox.com/scl/fi/5c93lc9ajfh382zwe3mtw/RRA-Rivals-Assets-contains-Studio.rbxlx?rlkey=tb0ybkvnukukdjy7v6wuptcbl&st=h0tohy1n&dl=1", gdrive: "https://drive.google.com/uc?export=download&id=1xalCKX-MUgqvgO1k1DD9BUqr6ac7lAKm" },
+        { title: "(RRA) Rivals Assets (contains Westown)", dropbox: "https://www.dropbox.com/scl/fi/tjvhjg0118bi4dshxt1zh/RRA-Rivals-Assets-contains-Westown.rbxlx?rlkey=pe3tbdginlqi9slgwgmzytwl9&st=o0m0ayhe&dl=1", gdrive: "https://drive.google.com/uc?export=download&id=1vs3vQlJJdslok3Q8F7nu8F2L2KLItGz_" },
+        { title: "(RRA) Rivals Assets (contains Museum)", dropbox: "https://www.dropbox.com/scl/fi/ssrlmf8lr1s0ritykkhke/RRA-Rivals-Assets-contains-Museum.rbxl?rlkey=ky1nxgg1hovle4y5fzj0ff0pc&st=gv0ercbb&dl=1", gdrive: "https://drive.google.com/uc?export=download&id=1vUp_IMqc0wj_wRVvtU67lMGD0K0yxWMA" },
+        { title: "(RRA) Season 3 Update 20 (4-24-2026)", dropbox: "https://www.dropbox.com/scl/fi/x0f2kutxm617e0f7ew1q7/RRA-Season-3-Update-20-4-24-2026.rbxlx?rlkey=cmjjzvh5tebc84hxt45vhbku6&st=rxuoyo4x&dl=1", gdrive: "https://drive.usercontent.google.com/download?id=1WpIrAirfWmOTLp4WTJ5Yw3iAPDHaostF&export=download" },
         { title: "(RRA) Rivals Assets (contains Factory)", url: "RBXLs/(RRA) Rivals Assets (contains Factory).rbxl" },
         { title: "(RRA) Rivals Assets (contains Sandbox)", url: "RBXLs/(RRA) Rivals Assets (contains Sandbox).rbxl" },
         { title: "(RRA) Rivals Assets (contains Spleef)", url: "RBXLs/(RRA) Rivals Assets (contains Spleef).rbxl" },
@@ -1222,6 +1761,9 @@
 
     const psdData = {
       "Labels": [
+        "Leaderboard V2",
+        "Menu Bar",
+        "Fun Fact",
         "Health Bar",
         "Ranked ELO",
         "Charm Reward",
@@ -1242,7 +1784,9 @@
         "Level",
         "Winstreak",
         "DuelHistory",
-        "Ranks"
+        "Ranks",
+        "Wins",
+        "Eliminations"
       ]
     };
 
@@ -1251,47 +1795,141 @@
         {
           title: "How to Make Roblox RIVALS Thumbnails",
           youtube: "QE6ezmvvqhM",
+          channelName: "GFXRhino",
           channelIcon: "https://yt3.googleusercontent.com/76DIg_yyLqp4QcT8rETHGzVS1BSZmXOr1g0H5SFF9Bu2cIdEBzjA3M1kWAJj1lsQOqdZS8bHrn0=s160-c-k-c0x00ffffff-no-rj"
         },
         {
           title: "Rivals Roblox GFX Tutorial #roblox #robloxgfx #gfx #tutorial #tips #blender3d #rivals #robloxrivals",
           youtube: "RJSI-ZQ-GwE",
+          channelName: "GFXRhino",
           channelIcon: "https://yt3.googleusercontent.com/76DIg_yyLqp4QcT8rETHGzVS1BSZmXOr1g0H5SFF9Bu2cIdEBzjA3M1kWAJj1lsQOqdZS8bHrn0=s160-c-k-c0x00ffffff-no-rj"
         },
         {
           title: "How to use the Blender MIST PASS | Easy Depth of Field & Fog",
           youtube: "HW3fRlVLlVg",
+          channelName: "GFXRhino",
           channelIcon: "https://yt3.googleusercontent.com/76DIg_yyLqp4QcT8rETHGzVS1BSZmXOr1g0H5SFF9Bu2cIdEBzjA3M1kWAJj1lsQOqdZS8bHrn0=s160-c-k-c0x00ffffff-no-rj"
         },
         {
           title: "FIX Roblox Studio to Blender Map Textures (Easy Exporting Guide)",
           youtube: "daxc17ab32w",
+          channelName: "GFXRhino",
           channelIcon: "https://yt3.googleusercontent.com/76DIg_yyLqp4QcT8rETHGzVS1BSZmXOr1g0H5SFF9Bu2cIdEBzjA3M1kWAJj1lsQOqdZS8bHrn0=s160-c-k-c0x00ffffff-no-rj"
         },
         {
           title: "how to separate energy pistols in blender",
           youtube: "YOsqvYrxDBs",
+          channelName: "zay",
           channelIcon: "https://yt3.googleusercontent.com/eOf8nXBuZDNayF6uwfcwXUFFPDC0mi48_2OOu_cmhuuBwb1dObh96hh3kMUldweYRpt8T0hh=s160-c-k-c0x00ffffff-no-rj"
         },
         {
           title: "How to apply wraps on guns for rivals gfx",
           youtube: "VkMINqvy46Q",
+          channelName: "zay",
           channelIcon: "https://yt3.googleusercontent.com/eOf8nXBuZDNayF6uwfcwXUFFPDC0mi48_2OOu_cmhuuBwb1dObh96hh3kMUldweYRpt8T0hh=s160-c-k-c0x00ffffff-no-rj"
         },
         {
           title: "How To Make VIRAL Roblox Thumbnails.. | (Complete Roblox Thumbnail Tutorial)",
           youtube: "lmxen_1gaUw",
+          channelName: "Strawberrie",
           channelIcon: "https://yt3.googleusercontent.com/dy2Kf42SjVjVSWEtMzQfUYBFWFeKChtfW8gluIOx5IFUbMrXthP4QoVj0RALtySd8GXwP8POvQ=s160-c-k-c0x00ffffff-no-rj"
         },
         {
           title: "Key Weapon Texture Fix",
           youtube: "aYpmnjILSJU",
+          channelName: "zay",
           channelIcon: "https://yt3.googleusercontent.com/eOf8nXBuZDNayF6uwfcwXUFFPDC0mi48_2OOu_cmhuuBwb1dObh96hh3kMUldweYRpt8T0hh=s160-c-k-c0x00ffffff-no-rj"
         }
       ]
     };
 
+    const sfxData = {
+      Gameplay: ["Lobby Theme"],
+    };
+
     const updatesData = [
+      {
+        date: "June 9, 2026 (12:29 PM CST)",
+        title: "Website Update – Changelog",
+        description: `➕ Added
+• Added a new PSD named Leaderboard V2. This is a new approach I made for the leaderboard labels. It has more layers and is more customizable than the old one, so you can change the the levels, ranks, wins, eliminations, and more!
+• Added a Wins and Eliminations PSD.
+• Added a marquee of creators on the home page that have used our assets in their content, so if you want to check out some amazing content made by these creators, be sure to click on their cards and check out their channels!
+• Added animated underlines on the home page for the "Welcome to Roblox Rivals Assets" text.
+• Added a Sounds tab. This tab is still under construction, but I will be adding sound effects from the game here soon, so stay tuned for that!
+🔧 Changes
+• Changed the popup UI when clicking on an icon, RBXL, or a PSD.
+• Changed the text below the last updated text on the home page from "This site is still in beta. Please report any bugs in our Discord server." to "Found a bug or have a suggestion? Let us know in our Discord server."
+🛠️ Fixed
+• Nothing.
+❌ Removed
+• Nothing.`
+      },
+      {
+        date: "May 26, 2026 (6:52 PM CST)",
+        title: "Website Update – Changelog",
+        description: `➕ Added
+• Added a new PSD named Menu Bar. This is the bar on the bottom of the screen when you join a Rivals lobby.
+🔧 Changes
+• Nothing.
+🛠️ Fixed
+• Nothing.
+❌ Removed
+• Nothing.`
+      },
+      {
+        date: "May 13, 2026 (6:54 PM CST)",
+        title: "Website Update – Changelog",
+        description: `➕ Added
+• Added a Download All Icons button on the Icons tab, allowing you to download all the icons at once in a convenient zip file!
+🔧 Changes
+• Nothing.
+🛠️ Fixed
+• Nothing.
+❌ Removed
+• Nothing.`
+      },
+      {
+        date: "May 3, 2026 (11:21 AM CST)",
+        title: "Website Update – Changelog",
+        description: `➕ Added
+• Added a Characters category in Icons (Chicken and 00bandoboy)
+• Added a new category named Bundles for Prop Bundle, Nostalgia Bundle, etc.
+• Added YouTube channel names on Tutorials tab
+• Added new icons (too many to label here)
+🔧 Changes
+• Renamed Bundles category to Battlepass
+• Changed the underline color from red to blue on the home page (genuinely might've forgot about it after april fools update)
+• Changed the speed of which the underline will animate (0.25s -> 0.30s)
+🛠️ Fixed
+• Nothing.
+❌ Removed
+• Nothing.`
+      },
+      {
+        date: "April 25, 2026 (11:37 AM CST)",
+        title: "Website Update – Changelog",
+        description: `➕ Added
+• Added the new RBXLs for Season 3 (note: i will add the new icons soon just wait a little)
+🔧 Changes
+• Nothing.
+🛠️ Fixed
+• Nothing.
+❌ Removed
+• Nothing.`
+      },
+      {
+        date: "April 23, 2026 (5:05 PM CST)",
+        title: "Website Update – Changelog",
+        description: `➕ Added
+• Finally added the Rivals Halloween icon logo (yes thats literally it 😭💔)
+🔧 Changes
+• Nothing.
+🛠️ Fixed
+• Nothing.
+❌ Removed
+• Nothing.`
+      },
       {
         date: "April 6, 2026 (2:40 PM CST)",
         title: "Website Update – Changelog",
@@ -1442,6 +2080,7 @@
     let psdLoaded = false;
     let tutorialsLoaded = false;
     let updatesLoaded = false;
+    let sfxLoaded = false;
 
     let searchMode = localStorage.getItem("searchMode") || "icons";
 
@@ -1472,6 +2111,11 @@
         psdLoaded = true;
       }
 
+      if (tabId === "sfx" && !sfxLoaded) {
+        generateSFX();
+        sfxLoaded = true;
+      }
+
       if (tabId === "tutorials" && !tutorialsLoaded) {
         generateTutorials();
         tutorialsLoaded = true;
@@ -1482,6 +2126,8 @@
         updatesLoaded = true;
       }
     }
+
+    
 
     function generateIcons() {
       const container = document.getElementById("icons-container");
@@ -1600,6 +2246,48 @@
       });
     }
 
+    function generateSFX() {
+      const container = document.getElementById("sfx-container");
+      container.innerHTML = "";
+
+      Object.keys(sfxData).forEach(category => {
+        const title = document.createElement("h2");
+        title.textContent = category;
+        container.appendChild(title);
+
+        const grid = document.createElement("div");
+        grid.className = "icons-grid";
+
+        sfxData[category].forEach(soundName => {
+          const card = document.createElement("div");
+          card.className = "icon-card";
+
+          const img = document.createElement("img");
+          img.src = "SFX.png";
+          img.loading = "lazy";
+
+          const label = document.createElement("p");
+          label.textContent = formatLabel(soundName);
+
+          card.onclick = () => {
+              const encodedName = encodeURIComponent(soundName);
+              openPopup(
+                  `Sounds/${encodedName}.mp3`,
+                  formatLabel(soundName),
+                  "SFX.png",
+                  { type: "sfx", audioUrl: `Sounds/${encodedName}.mp3` }
+              );
+          };
+
+          card.appendChild(img);
+          card.appendChild(label);
+          grid.appendChild(card);
+        });
+
+        container.appendChild(grid);
+      });
+    }
+
     function formatLabel(name) {
       return name
         .replace(/([a-z])([A-Z])/g, '$1 $2')
@@ -1638,6 +2326,12 @@
         }
       }
 
+      if (extra.type === "sfx") {
+        const previewBtn = document.getElementById("preview-btn");
+        previewBtn.style.display = "inline-block";
+        previewBtn.dataset.url = extra.audioUrl;
+    }
+
       popupImage.src = previewSrc || fileSrc;
       popupImage.style.display = "block";
 
@@ -1646,11 +2340,14 @@
 
     function closePopup() {
       const overlay = document.getElementById('popup-overlay');
-
       overlay.classList.add("closing");
-
       overlay.classList.remove("active");
       overlay.classList.remove("closing");
+
+      const audio = document.getElementById("audio-preview");
+      audio.pause();
+      audio.style.display = "none";
+      document.getElementById("preview-btn").style.display = "none";
     }
 
     function openDropbox() {
@@ -1661,6 +2358,27 @@
     function openDrive() {
       const url = document.getElementById("gdrive-btn").dataset.url;
       window.open(url, "_blank");
+    }
+
+    function openPreview() {
+      const url = document.getElementById("preview-btn").dataset.url;
+      const audio = document.getElementById("audio-preview");
+
+      if (!audio) {
+          console.error("audio-preview element not found in DOM");
+          return;
+      }
+
+      if (audio.style.display === "block") {
+          audio.pause();
+          audio.style.display = "none";
+          return;
+      }
+
+      audio.src = url;
+      audio.style.display = "block";
+      audio.load();
+      audio.play().catch(err => console.error("Audio playback failed:", err));
     }
 
     function downloadImage() {
@@ -1703,13 +2421,18 @@
           const thumbnail = `https://img.youtube.com/vi/${video.youtube}/hqdefault.jpg`;
 
           card.innerHTML = `
-          <div class="thumbnail-container">
-            <img src="${thumbnail}" loading="lazy">
-            <img class="channel-avatar-glow" src="${video.channelIcon}">
-            <img class="channel-avatar" src="${video.channelIcon}">
-          </div>
-          <p>${video.title}</p>
-        `;
+            <div class="thumbnail-container">
+              <img src="${thumbnail}" loading="lazy">
+              <img class="channel-avatar-glow" src="${video.channelIcon}">
+              <img class="channel-avatar" src="${video.channelIcon}">
+              <p class="channel-name">${video.channelName}</p>
+            </div>
+
+            <div class="tutorial-info">
+              <p class="video-title">${video.title}</p>
+              
+            </div>
+          `;
 
           card.onclick = () => {
             window.open(`https://youtube.com/watch?v=${video.youtube}`, "_blank");
@@ -1818,10 +2541,11 @@
 
         if (data && data[0]) {
           const commitDate = new Date(data[0].commit.committer.date);
-          document.getElementById('last-updated').textContent = `Last updated: ${timeAgo(commitDate)}`;
+          document.getElementById('last-updated').innerHTML = `Last updated: <u>${timeAgo(commitDate)}</u>`;
         }
       } catch (err) {
         console.error("Could not fetch last updated date", err);
+        document.getElementById('last-updated').innerHTML = `Last updated: <u>Cannot fetch: either an internet issue or something else.</u>`;
       }
     }
 
@@ -1959,6 +2683,28 @@
     window.addEventListener("beforeunload", () => {
       localStorage.setItem("searchMode", searchMode);
     });
+
+    function downloadAllIcons() {
+      window.open("https://download-directory.github.io/?url=https://github.com/squidward5/Roblox-Rivals-Assets/tree/main/Icons", "_blank");
+    }
+
+    window.addEventListener("load", () => {
+      const h2 = document.querySelector("h2.underline-link3");
+      const h1 = document.querySelector("h1.underline-link2");
+
+      if (h2) {
+        h2.classList.add("animate");
+      }
+
+      setTimeout(() => {
+        if (h1) {
+          h1.classList.add("animate");
+        }
+      }, 250);
+    });
+
+    const track = document.querySelector(".creators-track");
+    track.innerHTML += track.innerHTML;
   </script>
 </body>
 

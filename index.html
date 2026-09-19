@@ -185,6 +185,33 @@
       z-index: 1;
     }
 
+    .site-status {
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      right: 0;
+      bottom: 3px;
+      left: 0;
+      z-index: 999;
+      padding: 0 20px;
+      pointer-events: none;
+    }
+
+    .site-status .nav-container {
+      width: auto;
+      max-width: none;
+      padding: 10px 18px;
+      gap: 8px;
+      color: #bfbfbf;
+      font-size: 0.85rem;
+      flex-direction: row;
+      pointer-events: auto;
+    }
+
+    .site-status #online {
+      color: inherit;
+    }
+
     nav {
       display: flex;
       gap: 20px;
@@ -1670,7 +1697,7 @@
 
   <section id="sfx" class="tab">
     <div id="sfx-container"></div>
-    <p style="color: yellow;">⚠️ Still under construction. Come back soon! ⚠️</p>
+    <p style="color: yellow;">This tab will be scrapped soon for something better... 👀</p>
   </section>
 
   <section id="discord" class="tab">
@@ -1858,6 +1885,18 @@
     };
 
     const updatesData = [
+      {
+        date: "September 18, 2026 (7:03 PM CST)",
+        title: "Website Update – Changelog",
+        description: `➕ Added
+• New Gate Map RBXL (9-18-2026) which contains the new Gate Map, new RIA26 award, and more!
+🔧 Changes
+• Made the text in SFX tab say that it will be scrapped soon for something better.
+🛠️ Fixed
+• Nothing.
+❌ Removed
+• Nothing.`
+      },
       {
         date: "September 5, 2026 (9:45 AM CST)",
         title: "Website Update – Changelog",
@@ -2753,6 +2792,54 @@
 
     const track = document.querySelector(".creators-track");
     track.innerHTML += track.innerHTML;
+  </script>
+
+  <!-- online users feature stuff -->
+  <footer class="site-status">
+    <div class="nav-container">
+      <div id="online">🟢 0 online users</div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+    import {
+      getDatabase,
+      ref,
+      set,
+      onValue,
+      onDisconnect
+    } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBJ7Gvf1yqkGZTAPbgVMWQ7VQArYgXQSAM",
+      authDomain: "rra-online-counter.firebaseapp.com",
+      databaseURL: "https://rra-online-counter-default-rtdb.firebaseio.com",
+      projectId: "rra-online-counter",
+      storageBucket: "rra-online-counter.firebasestorage.app",
+      messagingSenderId: "696319060994",
+      appId: "1:696319060994:web:e8e78e943940331c05cb1b",
+      measurementId: "G-14FWPWDS9Z"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    const id = crypto.randomUUID();
+    const userRef = ref(db, "online/" + id);
+
+    await set(userRef, true);
+    onDisconnect(userRef).remove();
+
+    onValue(ref(db, "online"), (snapshot) => {
+        const count = snapshot.exists()
+            ? Object.keys(snapshot.val()).length
+            : 0;
+
+        const userLabel = count === 1 ? "user" : "users"; // a cool lil check to make sure it says "user" when there's only 1 user online and "users" when there's more than 1 user online
+        document.getElementById("online").textContent =
+          `🟢 ${count.toLocaleString()} online ${userLabel}`;
+    });
   </script>
 </body>
 
